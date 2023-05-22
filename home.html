@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="James Gomez">
+    <title>My Portfolio</title>
+    <script src="https://kit.fontawesome.com/b323f4ae67.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="app.js" id="app-script"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init();
+  });
+</script>
+
+  </head>
+  <body>
+    <header id="header">
+      <a href="#" class="logo">Portfolio</a>
+      <div id="toggle"></div>
+      <div id="navbar">
+        <ul>
+          <li><a href="#projects-section">PROJECT</a></li>
+          <li><a href="#about-section">ABOUT</a></li>
+          <li><a href="#skills-section">SKILLS</a></li>
+          <li><a href="#contact-section">CONTACT</a></li>
+        </ul>
+      </div>
+    </header>
+
+          <!-- hero section -->
+
+    <section class="hero">
+        <img src="./img/profile.jpg" class="hero-img" alt="" >
+        <h1>JAMES GOMEZ</h1>
+        <div class="divider-icon">
+            <div class="star-divider"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+            <div class="star-divider"></div>
+        </div>
+        <p>Front-End Developer</p>
+    </section>
+
+      <!-- about section -->
+    
+      <section id="about-section" class="about-section" data-aos="fade-right" data-aos-duration="1000"> 
+        <h2>About</h2>
+        <div class="divider-icon">
+          <div class="star-divider"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg>
+          <div class="star-divider"></div>
+        </div>
+        <p>As a developer with a strong background in HTML, CSS, and JavaScript,I am skilled in creating intuitive and visually appealing web applications. 
+          My experience with React and Node Express allows me to build efficient and scalable front-end systems. 
+          I am also proficient in database design and have experience working with Tailwind CSS and SASS to create responsive and dynamic designs. 
+          I am a proactive and team-oriented individual with a passion for continuously learning and improving my skills.</p>
+      </section>
+      
+    <!-- project section -->
+
+    <section id="projects-section" class="projects" data-aos="fade-left" data-aos-duration="1000">
+      <h2>Projects</h2>
+      <div class="divider-icon">
+        <div class="star-divider"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <div class="star-divider"></div>
+      </div>
+      <div class="projects-container">
+        <div class="project-container project-card">
+          <img src="img/p1.png" alt="" loading="lazy" />
+          <h3 class="project-title">E-commerce Webapp</h3>
+          <p class="project-details">
+            This webapp was built using, Javascript,Htlm and Css, 
+            the payment system within this application is just a deme and it isn't fully functional, it's used to show case what the knowledge I 
+            gained whiles building the webapp. This user friendly application displays dummy products that can't be purchased, further
+            work will be done to improve functionality as well as the design.
+            
+          </p>
+          <a href="https://olajameze.github.io/ecommerce-website/" target="_blank" class="project-link">Check it Out</a>
+        </div>
+    
+        <div class="project-container project-card">
+          <img src="img/p2.png" alt="" loading="lazy" />
+          <h3 class="project-title">Prefade Virtual</h3>
+          <p class="project-details">
+            This website was a side project I worked on using wix developer platform. The project was later used as a form of 
+            advert by an individual on some platforms. It was a good experience as it introduced me to a new concept i wasn't familier 
+            with.
+            The website was hosted using wix but the back-end and design was done by me.
+          </p>
+          <a href="https://www.prefade-virtual.com/" target="_blank" class="project-link">Check it Out</a>
+        </div>
+    
+        <div class="project-container project-card">
+          <img src="img/p3.png" alt="" loading="lazy" />
+          <h3 class="project-title">Calculator</h3>
+          <p class="project-details">
+            This was a mini project  built using Javascript and a little css. This was one of my first projects whiles 
+            learning JavaScript. It's quite a simple build but I learned quite a lot whiles building the application, it also 
+            enabled me to understand some functions and how they are used correctly.
+          </p>
+          <a href="file:///C:/Users/olago/OneDrive/Desktop/My%20calculator/index.html" target="_blank" class="project-link">Check it Out</a>
+        </div>
+      </div>
+    </section>
+
+      <!-- skills -->
+
+      <section id="skills-section" class="skills-section" data-aos="fade-up-left" data-aos-duration="1000">
+            <h1 class="heading">My Skills</h1>
+            <div class="divider-icon">
+                <div class="star-divider"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+                <div class="star-divider"></div>
+            </div>
+        <div class="skills-container">
+            <div class="skill-box">
+                <div class="skill-title">
+                    <div class="img">
+                        <img src="./img/html.png" class="skill-icon">
+                    </div>
+                <h3>HTML5</h3>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-title">
+                <div class="img">
+                    <img src="./img/css.png" class="skill-icon">
+                </div>
+                <h3>CSS</h3>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-title">
+                <div class="img">
+                    <img src="./img/js.png" class="skill-icon">
+                </div>
+                <h3>JavaScript</h3>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-title">
+                <div class="img">
+                    <img src="./img/reactjs.png" class="skill-icon">
+                </div>
+                <h3>React.Js</h3>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-title">
+                <div class="img">
+                    <img src="./img/nodejs.png" class="skill-icon">
+                </div>
+                <h3>Node.Js</h3>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-title">
+                <div class="img">
+                    <img src="./img/sql.png" class="skill-icon">
+                </div>
+                <h3>MySQL</h3>
+                </div>
+            </div>
+
+        <div class="skill-box">
+            <div class="skill-title">
+            <div class="img">
+                <img src="./img/php.png" class="skill-icon">
+            </div>
+            <h3>Php</h3>
+            </div>
+        </div>
+
+          <div class="skill-box">
+            <div class="skill-title">
+              <div class="img">
+                <img src="./img/jquery.png" class="skill-icon">
+              </div>
+              <h3>Jquery</h3>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <div class="skill-title">
+              <div class="img">
+                <img src="./img/tailwind.png" class="skill-icon">
+              </div>
+              <h3>Tailwind</h3>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <div class="skill-title">
+              <div class="img">
+                <img src="./img/github.png" class="skill-icon">
+              </div>
+              <h3>Git</h3>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- contact section -->
+
+      <h2>Contact Form</h2>
+
+      <section id="contact-section" class="contact-section" data-aos="fade-down-right" data-aos-duration="1000">
+        <div class="wrapper">
+          <form class="form">
+            <div class="pageTitle title">Contact Me </div>
+            <div class="secondaryTitle title">Please fill this form to get in touch.</div>
+            <input type="text" name="name" class="name formEntry" placeholder="Name" />
+            <input type="text" name="email" class="email formEntry" placeholder="Email"/>
+            <textarea name="message" class="message formEntry" placeholder="Message"></textarea>
+            <input type="checkbox" name="termsConditions" class="termsConditions" value="Term">
+            <label style="color: grey" for="terms"> I Accept the <span style="color: #0e3721">Terms of Use</span> & <span style="color: #0e3721">Privacy Policy</span>.</label><br>
+            <button type="submit" class="submit formEntry" onclick="thanks()">Submit</button>
+          </form>
+        </div>
+      </section>
+      
+      
+        <!--Footer-->
+        <footer>
+          <ul class="social-icons">
+            <li><a href="#"><i class="fab fa-slack"></i></a></li>
+            <li><a href="https://github.com/olajameze"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/james-gomez-585611129/"><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+          <p>&copy; 2023 My Project. All Rights Reserved.</p>
+        </footer>
+  </body>
+</html>

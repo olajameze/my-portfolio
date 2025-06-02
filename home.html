@@ -4,49 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="James Gomez">
-    <title>My Portfolio</title>
+    <!-- More descriptive title for SEO and browser tabs -->
+    <title>James Gomez - Front-End Developer Portfolio</title>
     <script src="https://kit.fontawesome.com/b323f4ae67.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <script src="app.js" id="app-script"></script>
+    <!-- AOS CSS - Animate on Scroll Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <!-- Your custom stylesheet - should generally come after library stylesheets if you want to override them -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <!-- AOS JS and initialization. DOMContentLoaded ensures AOS initializes after the HTML is parsed. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    AOS.init();
-  });
-</script>
-
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          // You can add global AOS options here, e.g.:
+          // duration: 800, // values from 0 to 3000, with step 50ms
+          // once: true, // whether animation should happen only once - while scrolling down
+        });
+      });
+    </script>
   </head>
   <body>
     <header id="header">
-      <a href="#" class="logo">Portfolio</a>
-      <div id="toggle"></div>
-      <div id="navbar">
+      <a href="#" class="logo">James Gomez</a> <!-- Or simply "Portfolio" or your initials -->
+      <div id="toggle"></div> <!-- For mobile menu icon -->
+      <nav id="navbar"> <!-- Changed div to nav for semantic HTML -->
         <ul>
-          <li><a href="#projects-section">PROJECT</a></li>
+          <li><a href="#projects-section">PROJECTS</a></li> <!-- Consistent casing -->
           <li><a href="#about-section">ABOUT</a></li>
           <li><a href="#skills-section">SKILLS</a></li>
           <li><a href="#contact-section">CONTACT</a></li>
         </ul>
-      </div>
+      </nav>
     </header>
 
-          <!-- hero section -->
-
+    <!-- hero section -->
     <section class="hero">
         <div class="hero-content">
-            <img src="./img/profile.jpg" class="hero-img" alt="James Gomez" >
+            <img src="./img/profile.jpg" class="hero-img" alt="James Gomez, Front-End Developer" > <!-- More descriptive alt text -->
             <h1 class="hero-title">JAMES GOMEZ</h1>
             <h2 class="hero-subtitle">Turning Ideas Into Interactive Experiences</h2>
-            <div class="divider-icon">
-                <div class="star-divider"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                </svg>
-                <div class="star-divider"></div>
+            <div class="divider-icon" role="presentation" aria-hidden="true">
+              <div class="star-divider"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+              <div class="star-divider"></div>
             </div>
-            <p class="hero-description">Front-End Developer specializing in creating beautiful and functional web experiences</p>
+            <p class="hero-description">Front-End Developer specializing in creating beautiful, functional, and user-centric web experiences.</p> <!-- Slightly enhanced description -->
             <div class="hero-cta">
                 <a href="#projects-section" class="cta-button primary">View My Work</a>
                 <a href="#contact-section" class="cta-button secondary">Get In Touch</a>
@@ -54,10 +59,9 @@
         </div>
     </section>
 
-      <!-- about section -->
-    
-      <section id="about-section" class="about-section" data-aos="fade-right" data-aos-duration="1000"> 
-        <h2>About</h2>
+    <!-- about section -->
+    <section id="about-section" class="about-section" data-aos="fade-right" data-aos-duration="1000">
+        <h2>About Me</h2> <!-- Changed to "About Me" for a more personal touch -->
         <div class="divider-icon">
           <div class="star-divider"></div>
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -65,22 +69,22 @@
           </svg>
           <div class="star-divider"></div>
         </div>
-        <p>As a developer with a strong background in HTML, CSS, and JavaScript,I am skilled in creating intuitive and visually appealing web applications. 
-          My experience with React and Node Express allows me to build efficient and scalable front-end systems. 
-          I am also proficient in database design and have experience working with Tailwind CSS and SASS to create responsive and dynamic designs. 
-          I am a proactive and team-oriented individual with a passion for continuously learning and improving my skills.</p>
-      </section>
-      
-    <!-- project section -->
+        <p>As a dedicated Front-End Developer, I bring a strong foundation in HTML, CSS, and JavaScript to craft intuitive and visually appealing web applications.
+          My experience with modern frameworks like React, coupled with Node.js/Express for server-side logic, allows me to build efficient and scalable solutions.
+          I am proficient in database interactions and leverage tools like Tailwind CSS and SASS to create responsive and dynamic user interfaces.
+          A proactive and collaborative team player, I am passionate about continuous learning and committed to enhancing my skills to deliver high-quality digital products.</p> <!-- Refined for professionalism and flow -->
+    </section>
 
+    <!-- project section -->
     <section id="projects-section" class="projects" data-aos="fade-left" data-aos-duration="1000">
-      <h2>Projects</h2>
+      <h2>My Projects</h2> <!-- Changed to "My Projects" -->
       <div class="project-filters">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        <!-- Removed duplicate "All" button -->
         <button type="button" class="filter-btn" data-filter="javascript">JavaScript</button>
         <button type="button" class="filter-btn" data-filter="react">React</button>
         <button type="button" class="filter-btn" data-filter="web">Web Design</button>
+      </div> <!-- Moved the closing div for project-filters to wrap the buttons -->
       <div class="divider-icon">
         <div class="star-divider"></div>
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -90,47 +94,39 @@
       </div>
       <div class="projects-container">
         <div class="project-container project-card">
-          <img src="img/p1.png" alt="" loading="lazy" />
+          <img src="img/p1.png" alt="Screenshot of E-commerce Webapp homepage" loading="lazy" /> <!-- Descriptive alt text -->
           <h3 class="project-title">E-commerce Webapp</h3>
           <p class="project-details">
-            This webapp was built using, Javascript,Htlm and Css, 
-            the payment system within this application is just a deme and it isn't fully functional, it's used to show case what the knowledge I 
-            gained whiles building the webapp. This user friendly application displays dummy products that can't be purchased, further
-            work will be done to improve functionality as well as the design.
-            
-          </p>
+            A demonstration e-commerce platform built with JavaScript, HTML, and CSS. This project showcases key front-end features including product display and a conceptual payment flow. It served as a valuable exercise in developing user-centric interfaces and dynamic web functionalities.
+          </p> <!-- Rephrased description -->
           <a href="https://olajameze.github.io/ecommerce-website/" target="_blank" rel="noopener noreferrer" class="project-link">Check it Out</a>
         </div>
-    
+
         <div class="project-container project-card">
-          <img src="img/p2.png" alt="" loading="lazy" />
+          <img src="img/p2.png" alt="Screenshot of Prefade Virtual website" loading="lazy" /> <!-- Descriptive alt text -->
           <h3 class="project-title">Prefade Virtual</h3>
           <p class="project-details">
-            This website was a side project I worked on using wix developer platform. The project was later used as a form of 
-            advert by an individual on some platforms. It was a good experience as it introduced me to a new concept i wasn't familier 
-            with.
-            The website was hosted using wix but the back-end and design was done by me.
-          </p>
-          <a href="https://www.prefade-virtual.com/" target="_blank" rel="noopener" class="project-link">Check it Out</a>
+            Developed a promotional website for Prefade Virtual using the Wix platform, focusing on custom design and back-end logic implementation. This project provided experience in adapting to different development environments and delivering a client-focused advertising solution.
+          </p> <!-- Rephrased description -->
+          <a href="https://www.prefade-virtual.com/" target="_blank" rel="noopener noreferrer" class="project-link">Check it Out</a> <!-- Added noreferrer -->
         </div>
-    
+
         <div class="project-container project-card">
-          <img src="img/p3.png" alt="" loading="lazy" />
-          <h3 class="project-title">Calculator</h3>
+          <img src="img/p3.png" alt="Screenshot of JavaScript Calculator" loading="lazy" /> <!-- Descriptive alt text -->
+          <h3 class="project-title">DrivEdify</h3>
           <p class="project-details">
-            This was a mini project  built using Javascript and a little css. This was one of my first projects whiles 
-            learning JavaScript. It's quite a simple build but I learned quite a lot whiles building the application, it also 
-            enabled me to understand some functions and how they are used correctly.
-          </p>
-          <a href="file:///C:/Users/olago/OneDrive/Desktop/My%20calculator/index.html" target="_blank" class="project-link">Check it Out</a>
-        </div>
+            An early project focused on core JavaScript functionalities and CSS styling. This simple calculator application was instrumental in solidifying my understanding of event handling and DOM manipulation in JavaScript.
+          </p> <!-- Rephrased description -->
+          <!-- IMPORTANT: Replace with the actual live URL once hosted -->
+ <a href="https://drivedify.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Check it Out</a>
+        </div> 
       </div>
     </section>
 
-      <!-- skills -->
-
-      <section id="skills-section" class="skills-section" data-aos="fade-up-left" data-aos-duration="1000">
-            <h1 class="heading">My Skills</h1>
+    <!-- skills -->
+    <section id="skills-section" class="skills-section" data-aos="fade-up-left" data-aos-duration="1000">
+            <!-- Changed h1 to h2 for correct semantic hierarchy -->
+            <h2>My Skills</h2>
             <div class="divider-icon">
                 <div class="star-divider"></div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -144,135 +140,144 @@
                     <div class="img">
                         <img src="./img/html.png" class="skill-icon" alt="HTML5 icon">
                     </div>
-                <h3>HTML5</h3>
+                    <h3>HTML5</h3>
                 </div>
             </div>
-
             <div class="skill-box">
                 <div class="skill-title">
-                <div class="img">
-                    <img src="./img/css.png" class="skill-icon" alt="CSS icon">
-                </div>
-                <h3>CSS</h3>
+                    <div class="img">
+                        <img src="./img/css.png" class="skill-icon" alt="CSS icon">
+                    </div>
+                    <h3>CSS3</h3> <!-- Often good to specify CSS3 -->
                 </div>
             </div>
-
             <div class="skill-box">
                 <div class="skill-title">
-                <div class="img">
-                    <img src="./img/js.png" class="skill-icon" alt="JavaScript icon">
-                </div>
-                <h3>JavaScript</h3>
+                    <div class="img">
+                        <img src="./img/js.png" class="skill-icon" alt="JavaScript icon">
+                    </div>
+                    <h3>JavaScript</h3>
                 </div>
             </div>
-
             <div class="skill-box">
                 <div class="skill-title">
-                <div class="img">
-                    <img src="./img/reactjs.png" class="skill-icon" alt="React.js icon">
-                </div>
-                <h3>React.Js</h3>
+                    <div class="img">
+                        <img src="./img/reactjs.png" class="skill-icon" alt="React.js icon">
+                    </div>
+                    <h3>React.js</h3> <!-- Standardized casing -->
                 </div>
             </div>
-
             <div class="skill-box">
                 <div class="skill-title">
-                <div class="img">
-                    <img src="./img/nodejs.png" class="skill-icon" alt="Node.js icon">
-                <h3>Node.Js</h3>
+                    <div class="img">
+                        <img src="./img/nodejs.png" class="skill-icon" alt="Node.js icon">
+                    </div>
+                    <h3>Node.js</h3> <!-- Corrected structure: h3 is sibling to .img, not child. Standardized casing. -->
                 </div>
             </div>
-
             <div class="skill-box">
                 <div class="skill-title">
-                <div class="img">
-                    <img src="./img/sql.png" class="skill-icon" alt="SQL icon">
-                <h3>MySQL</h3>
+                    <div class="img">
+                        <img src="./img/sql.png" class="skill-icon" alt="SQL icon">
+                    </div>
+                    <h3>MySQL</h3>
                 </div>
             </div>
-
-        <div class="skill-box">
-            <div class="skill-title">
-            <div class="img">
-                <img src="./img/php.png" class="skill-icon" alt="PHP icon">
-            <h3>Php</h3>
+            <div class="skill-box">
+                <div class="skill-title">
+                    <div class="img">
+                        <img src="./img/php.png" class="skill-icon" alt="PHP icon">
+                    </div>
+                    <h3>PHP</h3> <!-- Standardized casing -->
+                </div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-title">
+                    <div class="img">
+                        <img src="./img/jquery.png" class="skill-icon" alt="jQuery icon">
+                    </div>
+                    <h3>jQuery</h3> <!-- Standardized casing -->
+                </div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-title">
+                    <div class="img">
+                        <img src="./img/tailwind.png" class="skill-icon" alt="Tailwind CSS icon">
+                    </div>
+                    <h3>Tailwind CSS</h3> <!-- More specific name -->
+                </div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-title">
+                    <div class="img">
+                        <img src="./img/github.png" class="skill-icon" alt="Git icon"> <!-- Changed alt to Git -->
+                    </div>
+                    <h3>Git</h3>
+                </div>
             </div>
         </div>
+    </section>
 
-          <div class="skill-box">
-            <div class="skill-title">
-              <div class="img">
-                <img src="./img/jquery.png" class="skill-icon" alt="jQuery icon">
-              <h3>Jquery</h3>
-            </div>
-          </div>
-
-          <div class="skill-box">
-            <div class="skill-title">
-              <div class="img">
-                <img src="./img/tailwind.png" class="skill-icon" alt="Tailwind CSS icon">
-              <h3>Tailwind</h3>
-            </div>
-          </div>
-
-          <div class="skill-box">
-            <div class="skill-title">
-              <div class="img">
-                <img src="./img/github.png" class="skill-icon" alt="GitHub icon">
-              <h3>Git</h3>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- contact section -->
-
-      <h2>Contact Form</h2>
-
-      <section id="contact-section" class="contact-section" data-aos="fade-down-right" data-aos-duration="1000">
+    <!-- contact section -->
+    <!-- Removed h2 from outside, integrated below -->
+    <section id="contact-section" class="contact-section" data-aos="fade-down-right" data-aos-duration="1000">
         <div class="wrapper">
-            <form class="form" id="contactForm" novalidate>
-                <div class="pageTitle title">Contact Me </div>
-                <div class="secondaryTitle title">Please fill this form to get in touch.</div>
+            <form class="form" id="contactForm" novalidate> <!-- novalidate because custom validation is used -->
+                <div class="pageTitle title">Get In Touch</div> <!-- Changed to "Get In Touch" for a common CTA phrase -->
+                <div class="secondaryTitle title">Have a project in mind or want to connect? Please fill out this form.</div>
                 <div class="form-group">
-                    <input type="text" name="name" class="name formEntry" placeholder="Name" required />
+                    <input type="text" name="name" id="name" class="name formEntry" placeholder="Your Name" required />
                     <span class="error-message" id="nameError"></span>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" class="email formEntry" placeholder="Email" required/>
+                    <input type="email" name="email" id="email" class="email formEntry" placeholder="Your Email" required/>
                     <span class="error-message" id="emailError"></span>
                 </div>
                 <div class="form-group">
-                    <textarea name="message" class="message formEntry" placeholder="Message" required></textarea>
+                    <textarea name="message" id="message" class="message formEntry" placeholder="Your Message" required></textarea>
                     <span class="error-message" id="messageError"></span>
                 </div>
                 <div class="form-group checkbox-group">
                     <label for="terms">
-                        <input type="checkbox" id="terms" name="termsConditions" class="termsConditions" value="Term" required>
-                        I agree to the terms and conditions
+                        <input type="checkbox" id="terms" name="termsConditions" class="termsConditions" value="consent" required> <!-- Changed value for clarity -->
+                        <!-- Rephrased for better context in a portfolio -->
+                        I consent to James Gomez contacting me in response to this message.
                     </label>
                     <span class="error-message" id="termsError"></span>
                 </div>
-                <button type="submit" class="submit formEntry">Submit</button>
+                <button type="submit" class="submit formEntry">Send Message</button> <!-- More specific button text -->
             </form>
             <div id="successMessage" class="success-message hidden">
                 Thank you for your message! I'll get back to you soon.
             </div>
         </div>
-      </section>
-      
-      
-        <!--Footer-->
-        <footer>
-          <ul class="social-icons">
-            <li><a href="#" title="Slack Profile" aria-label="Visit my Slack profile"><i class="fab fa-slack"></i></a></li>
-            <li><a href="https://github.com/olajameze" title="GitHub Profile" aria-label="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/james-gomez-585611129/" title="LinkedIn Profile" aria-label="Visit my LinkedIn profile"><i class="fab fa-linkedin"></i></a></li>
-          </ul>
-          <p>&copy; 2025 My Project. All Rights Reserved.</p>
-        </footer>
+    </section>
+
+    <!--Footer-->
+    <footer>
+      <ul class="social-icons">
+        <!-- Consider adding your actual Slack profile link or removing if not applicable -->
+        <li><a href="#" title="Slack Profile" aria-label="Visit my Slack profile"><i class="fab fa-slack"></i></a></li>
+        <li><a href="https://github.com/olajameze" target="_blank" rel="noopener noreferrer" title="GitHub Profile" aria-label="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/james-gomez-585611129/" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile" aria-label="Visit my LinkedIn profile"><i class="fab fa-linkedin"></i></a></li>
+      </ul>
+      <!-- Dynamic year and updated project name -->
+      <p>&copy; <span id="currentYear"></span> James Gomez. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts: Placed at the end of the body for faster page load perception -->
+    <!-- Your custom application logic -->
+    <script src="app.js" id="app-script"></script>
+    <!-- Form validation script -->
+    <script src="form-validation.js"></script>
+    <!-- Script for dynamic year in footer -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const currentYearSpan = document.getElementById('currentYear');
+        if (currentYearSpan) {
+          currentYearSpan.textContent = new Date().getFullYear();
+        }
+      });
+    </script>
   </body>
 </html>
-
-<script src="form-validation.js"></script>

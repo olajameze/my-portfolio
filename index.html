@@ -12,6 +12,17 @@
     <!-- Your custom stylesheet - should generally come after library stylesheets if you want to override them -->
     <link rel="stylesheet" type="text/css" href="main.css">
 
+    <!-- AOS JS and initialization. DOMContentLoaded ensures AOS initializes after the HTML is parsed. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          // You can add global AOS options here, e.g.:
+          // duration: 800, // values from 0 to 3000, with step 50ms
+          // once: true, // whether animation should happen only once - while scrolling down
+        });
+      });
+    </script>
   </head>
   <body>
     <header id="header">
@@ -108,8 +119,7 @@
           <p class="project-details">
            DrivEdify is a web app for driving instructors that combines scheduling, 
            student tracking, and payment management with interactive tools like 2D road simulations and quizzes. 
-           Created to fill a gap between administration and engaging lesson content, 
-           it ensures only licensed instructors use the platform for a more efficient and effective teaching experience.
+           Created to fill a gap between administration and engaging lesson content, it ensures only licensed instructors use the platform for a more efficient and effective teaching experience.
           </p> <!-- Rephrased description -->
           <!-- IMPORTANT: Replace with the actual live URL once hosted -->
  <a href="https://drivedify.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Check it Out</a>
@@ -314,7 +324,7 @@
     <!-- Removed h2 from outside, integrated below -->
     <section id="contact-section" class="contact-section" data-aos="fade-down-right" data-aos-duration="1000">
         <div class="wrapper">
-            <form class="form" id="contactForm" action="mailto:olagomez@live.co.uk" method="POST" enctype="text/plain" novalidate> <!-- novalidate because custom validation is used -->
+            <form class="form" id="contactForm" novalidate> <!-- novalidate because custom validation is used -->
                 <div class="pageTitle title">Get In Touch</div> <!-- Changed to "Get In Touch" for a common CTA phrase -->
                 <div class="secondaryTitle title">Have a project in mind or want to connect? Please fill out this form.</div>
                 <div class="form-group">

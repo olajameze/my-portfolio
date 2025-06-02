@@ -1,5 +1,25 @@
 /*Responsive*/
 
+:root {
+  --primary-color: #2C3E50; /* Dark Blue-Gray */
+  --secondary-color: #1ABC9C; /* Turquoise */
+  --accent-color-light: #9051ff; /* Purple for toggle */
+  --accent-color-active: #f7226a; /* Pink for active toggle */
+  --text-color-light: #fff;
+  --text-color-dark: #333;
+  --background-light: #fff;
+  --background-medium: #f2f2f2;
+  --background-section-alpha1: #B1DDE03A; /* Light blueish with alpha */
+  --background-section-alpha2: #BFC7E03A; /* Light grayish-blue with alpha */
+  --background-skills: #eaf6f6;
+  --font-primary: Arial, Helvetica, sans-serif;
+  --font-secondary: "Lucida Console", "Courier New", monospace;
+  --box-shadow-light: 0 5px 25px rgba(0,0,0,0.05);
+  --box-shadow-form: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+  --border-color-subtle: rgba(0, 0, 0, 0.1);
+  --projects-gap: 1.5rem; /* Gap for project cards */
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -7,7 +27,9 @@
 }
 
 body {
+  font-family: var(--font-primary);
   overflow-x: hidden; /* Add this line to prevent horizontal scrolling */
+  padding-bottom: 110px; /* Added space for the fixed footer height */
 }
 
 #container {
@@ -49,21 +71,20 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background: #2C3E50;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+  background: var(--primary-color);
+  box-shadow: var(--box-shadow-light);
 }
 
 
 .logo {
   height: 60px;
   line-height: 60px;
-  color: #fff;
+  color: var(--text-color-light);
   font-weight: 700;
   font-size: 2em;
   text-decoration: none;
   cursor: pointer;
-  padding-left: 20px;
-  text-decoration: none;
+  padding-left: 20px; /* text-decoration: none was duplicated */
 }
 
 #toggle {
@@ -72,7 +93,7 @@ top: 0;
 right: 0;
 width: 60px;
 height: 60px;
-background: #9051ff;
+background: var(--accent-color-light);
 cursor: pointer;
 display: flex;
 justify-content: center;
@@ -84,7 +105,7 @@ content: '';
 position: absolute;
 width: 28px;
 height: 2px;
-background: #fff;
+background: var(--text-color-light);
 transform: translateY(-5px);
 transition: 0.2s;
 }
@@ -94,13 +115,13 @@ content: '';
 position: absolute;
 width: 28px;
 height: 2px;
-background-color: #fff;
+background-color: var(--text-color-light);
 transform: translateY(5px);
 transition: 0.2s;
 }
 
 #toggle.active::before{
-transform: translateY(0px) rotate (45deg);
+transform: translateY(0px) rotate(45deg); /* Removed space before (45deg) */
 }
 
 #toggle.active::after{
@@ -108,19 +129,18 @@ transform: translateY(0px) rotate(-45deg);
 }
 
 #toggle.active {
-background: #f7226a;
+background: var(--accent-color-active);
 }
 
 #navbar {
 position: relative;
 height: 60px;
 right: 60px;
-background: #2C3E50;
+background: var(--primary-color);
 transition: 0.5s;
 width: 0px;
-overflow: hidden;
 z-index: 9999;
-overflow: hidden;
+overflow: hidden; /* Duplicated overflow: hidden removed */
 }
 
 #navbar.active {
@@ -138,7 +158,7 @@ list-style: none;
 }
 
 #navbar ul li a {
-color: #fff;
+color: var(--text-color-light);
 height: 60px;
 line-height: 60px;
 display: inline-block;
@@ -148,9 +168,16 @@ padding: 0 15px;
 letter-spacing: 2px;
 }
 
-#navbar ul li a:hover {
-color: #fff;
-background: #1ABC9C;
+#navbar ul li a:hover,
+#navbar ul li a:focus {
+  color: var(--text-color-light);
+  background: var(--secondary-color);
+  outline: 2px solid var(--secondary-color);
+  outline-offset: -2px;
+}
+
+#navbar ul li a:focus-visible { /* Modern focus styling */
+  outline: 3px solid var(--accent-color-active);
 }
 
 /* hero */
@@ -161,14 +188,14 @@ background: #1ABC9C;
     justify-content: center;
     row-gap: 20px;
     align-items: center;
-    background-color: #B1DDE03A;
+    background-color: var(--background-section-alpha1);
     height: auto;
     padding-bottom: 200px;
     overflow: hidden;
 }
 
 .hero-img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     margin-top: 75px;
 }
@@ -182,7 +209,7 @@ background: #1ABC9C;
 .star-divider {
     height: 5px;
     width: 100px;
-    background-color: #000;
+    background-color: var(--text-color-dark); /* Changed from #000 for consistency */
     margin: 0 20px;
 }
 
@@ -205,66 +232,76 @@ p {
   align-items: center;
   height: auto;
   padding-bottom: 200px;
-  background-color: #BFC7E03A;
+  background-color: var(--background-section-alpha2);
   overflow: hidden;
 }
 
 h2 {
   text-align: center;
   font-size: 60px;
-  color: #000;
-  font-family: "Lucida Console", "Courier New", monospace;
+  color: var(--text-color-dark);
+  font-family: var(--font-secondary);
   margin: 20px;
 }
 
-p2 {
+p.about-text { /* Consider using a standard <p> tag with a class instead of <p2> */
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif; 
-  color: #000;
+  font-family: var(--font-primary);
+  color: var(--text-color-dark);
   margin: 10px;
 }
 
 /* project-section */
 
 #projects-section {
-  background-color: #B1DDE03A;
+  background-color: var(--background-section-alpha1);
   overflow: hidden;
 }
 
 .projects-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: var(--projects-gap); /* Use gap for spacing */
   margin-top: 50px;
   max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto; /* Keep container centered */
+  margin-right: auto; /* Keep container centered */
 }
 
 .project-card {
-  background-color: #f2f2f2;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--background-medium);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Slightly softer shadow */
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 30px;
-  width: 30%;
-  transition: transform 0.2s ease-in-out;
+  width: calc((100% - 2 * var(--projects-gap)) / 3); /* 3 columns with gap */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added box-shadow transition */
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
+.project-card:hover,
+.project-card:focus-within { /* focus-within is great for cards with interactive elements */
+  transform: translateY(-8px) scale(1.02); /* Slightly more pronounced hover */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .project-card img {
+  display: block; /* Fix potential small gap under image */
   width: 100%;
   height: 200px;
   object-fit: cover;
+  transition: transform 0.3s ease-in-out; /* For hover effect */
+}
+
+.project-card:hover img,
+.project-card:focus-within img {
+  transform: scale(1.05); /* Subtle zoom on image */
 }
 
 .project-card .project-title {
   font-size: 24px;
   font-weight: 600;
-  margin-top: 20px;
+  padding: 0 20px; /* Add horizontal padding */
+  margin-top: 20px; /* Keep vertical margin */
   margin-bottom: 10px;
 }
 
@@ -278,25 +315,37 @@ p2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #008080;
-  color: #fff;
+  background-color: var(--secondary-color); /* Using teal from navbar hover */
+  color: var(--text-color-light);
   padding: 10px 20px;
   border-radius: 5px;
   margin: 20px;
   text-decoration: none;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
 }
 
-.project-card .project-link:hover {
-  background-color: #006666;
+.project-card .project-link:hover,
+.project-card .project-link:focus {
+  background-color: #16a085; /* Slightly darker shade of secondary-color */
+  transform: translateY(-2px);
+  outline: 2px solid #16a085;
+  outline-offset: 2px;
+}
+
+.project-card .project-link:active {
+  background-color: #148f77; /* Even darker shade for active state */
+  transform: translateY(1px); /* Subtle press down effect */
+}
+
+.project-card .project-link:focus-visible {
+  outline: 3px solid var(--accent-color-active);
 }
 
 /* skills */
 
 .skill-section{
     margin: 50px 0;
-    padding-bottom: 200px;
-    background-color: #eaf6f6;
+    background-color: var(--background-skills);
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -304,11 +353,12 @@ p2 {
     align-items: center;
     overflow: hidden;
 }
+/* Removed padding-bottom: 200px from .skill-section, as sections usually have it or it's managed by a wrapper */
 
 .heading{
     text-align: center;
     font-size: 60px;
-    color: #000;
+    color: var(--text-color-dark);
     text-transform: capitalize;
     font-weight: 300;
     margin-bottom: 10px;
@@ -322,36 +372,43 @@ p2 {
     transform: translateX(-50%);
     height: 4px;
     width: 100px;
-    background-color: #2ecc71;
+    background-color: var(--secondary-color); /* Consistent accent */
 }
 
 h3 {
     text-align: center;
     font-size: 20px;
-    color: #000;
-    font-family: "Lucida Console", "Courier New", monospace;
+    color: var(--text-color-dark);
+    font-family: var(--font-secondary);
 }
 
 .skills-container{
     width: 95%;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* More flexible grid */
     grid-gap: 100px;
-    color: #fff;
+    color: var(--text-color-light); /* This color might not be visible if skill-box has its own background */
 }
 
 .skill-box{
     padding: 1rem;
-    color: #ddd;
+    color: var(--text-color-dark); /* Changed from #ddd as background is light */
     cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.skill-box:hover > .skill-title:after .skill-box:hover > .skill-title:before {
-    width: 35px;
+.skill-box:hover .skill-title::after { /* Corrected selector to animate the ::after pseudo-element's width */
+    width: 35px; /* Assuming the goal is to expand the line */
 }
-.skill-box:hover .img {
+.skill-box:hover .img { /* Ensure .img class exists if this rule is intended */
     transform: translateY(-10px);
+}
+
+.skill-box:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
 .skill-title {
@@ -363,7 +420,7 @@ h3 {
     position: relative;
 }
 
-.skill-title:after {
+.skill-title::after { /* Using modern ::after syntax */
     content: '';
     position: absolute;
     bottom: 0;
@@ -371,11 +428,11 @@ h3 {
     width: 0;
     height: 4px;
     border-radius: 2px 0 0 2px;
-    background-color: #2cc71;
+    background-color: var(--secondary-color); /* Consistent accent */
     transition: .5s;
 }
 
-.skill-title:before {
+.skill-title::before { /* Using modern ::before syntax */
     content: '';
     position: absolute;
     bottom: 0;
@@ -383,13 +440,13 @@ h3 {
     width: 35px;
     height: 4px;
     border-radius: 0 2px 2px 0;
-    background-color: #2cc71;
+    background-color: var(--secondary-color); /* Consistent accent */
 }
 
 
 
 .skill-title h3 {
-    color: #000;
+    color: var(--text-color-dark);
     margin: 0.5rem;
 }
 
@@ -398,16 +455,94 @@ h3 {
     z-index: 2;
 }
 
-@media screen and (max-width: 99px) {
-    .container {
-        grid-template-columns: (2, 1fr);
+@media screen and (max-width: 992px) { /* Assuming 99px was a typo for 992px or similar. Review this breakpoint. */
+    .skills-container-small-variant { /* Changed .container to a more specific name or adjust as needed */
+        grid-template-columns: repeat(2, 1fr); /* Corrected grid-template-columns syntax */
         padding: 2rem 50px;
     }
 }
 
+/* Terms and Conditions Section */
 
-/
-// contact page
+#terms.terms {
+  background-color: var(--background-medium);
+  padding: 50px 20px;
+  padding-bottom: 200px; /* Match spacing of other sections */
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: var(--font-primary);
+  color: var(--text-color-dark);
+  overflow: hidden;
+}
+
+.terms-section-title {
+  text-align: center;
+  font-size: 60px; /* Same as other h2 headings */
+  color: var(--text-color-dark);
+  font-family: var(--font-secondary);
+  margin: 20px 0 40px;
+}
+
+#terms h3 {
+  font-size: 24px;
+  color: var(--text-color-dark);
+  font-family: var(--font-primary);
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+#terms p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+#terms ul {
+  margin-left: 20px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+#terms ul li {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #terms.terms {
+    padding: 30px 15px;
+    padding-bottom: 100px;
+  }
+
+  .terms-section-title {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+
+  #terms h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  #terms p,
+  #terms ul li {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  #terms ul {
+    margin-left: 15px;
+    padding-left: 15px;
+  }
+}
+
+/*
+ contact page
+*/
 
 #title-Tag-Line {
   font-size: 20px;
@@ -416,19 +551,19 @@ h3 {
 }
 
 .contact-section {
-  background-color: #f2f2f2;
+  background-color: var(--background-medium);
   padding: 50px 0;
 }
 
 .form {
-  background: #fff;
-  box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+  background: var(--background-light);
+  box-shadow: var(--box-shadow-form);
   border-radius: 5px;
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
-  border-top: 5px solid #0e3721;
+  border-top: 5px solid var(--primary-color); /* Consistent with header */
   text-align: center;
 }
 
@@ -446,6 +581,18 @@ h3 {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea.formEntry { /* Specific styles for textarea */
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 120px; /* Set a minimum height */
+}
+
+.form .formEntry:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.25); /* Focus ring with secondary color */
+  outline: none;
 }
 
 .form .termsConditions {
@@ -454,11 +601,14 @@ h3 {
 
 .form label {
   font-size: 14px;
+  display: block; /* Make labels block elements */
+  text-align: left; /* Align label text to the left */
+  margin-bottom: 0.35rem; /* Add some space below the label */
 }
 
 .form .submit {
-  background-color: #008080;
-  color: #fff;
+  background-color: var(--secondary-color);
+  color: var(--text-color-light);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -469,20 +619,27 @@ h3 {
 }
 
 
-.form .submit:hover {
-  background-color: #2F80807A;
+.form .submit:hover,
+.form .submit:focus {
+  background-color: #16a085; /* Darker shade of secondary */
+  outline: 2px solid #16a085;
+  outline-offset: 2px;
+}
+.form .submit:focus-visible {
+  outline: 3px solid var(--accent-color-active);
 }
 
-// footer
-footer {
-  background-color: #BFC7E03A;
-  padding: 20px;
+/* footer */
+footer { /* Consider changing position: fixed for the footer if it overlaps content, or ensure body has enough padding-bottom */
+  background-color: var(--background-section-alpha2);
+  padding: 25px 20px; /* Slightly increased vertical padding */
   display: flex;
   flex-direction: column;
   align-items: center;
   position: fixed;
   bottom: 0;
   width: 100%;
+  border-top: 1px solid var(--border-color-subtle); /* Added subtle top border */
 }
 
 
@@ -499,17 +656,24 @@ footer {
 }
 
 .social-icons li a {
-  color: #333;
+  color: var(--text-color-dark);
   font-size: 1.5em;
   transition: color 0.2s ease-in-out;
+  display: inline-block; /* For transform to work */
 }
 
-.social-icons li a:hover {
-  color: #B89EFF6B;
+.social-icons li a:hover,
+.social-icons li a:focus {
+  color: var(--secondary-color);
+  transform: translateY(-3px) scale(1.1);
+}
+.social-icons li a:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  border-radius: 50%; /* if icons are circular */
 }
 
 footer p {
-  color: #333;
+  color: var(--text-color-dark);
   margin-top: 20px;
   text-align: center;
 }
@@ -524,7 +688,7 @@ footer p {
 
 .hero-subtitle {
     font-size: 1.5rem;
-    color: #666;
+    color: var(--text-color-dark); /* Using a variable */
     margin: 1rem 0;
 }
 
@@ -548,14 +712,19 @@ footer p {
 }
 
 .cta-button.primary {
-    background-color: #2C3E50;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
 }
 
 .cta-button.secondary {
     background-color: transparent;
-    border: 2px solid #2C3E50;
-    color: #2C3E50;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.cta-button:focus-visible {
+    outline: 3px solid var(--accent-color-active);
+    outline-offset: 2px;
 }
 
 /* Project filters */
@@ -569,15 +738,22 @@ footer p {
 .filter-btn {
     padding: 0.5rem 1rem;
     border: none;
-    background: #f0f0f0;
+    background: var(--background-medium);
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.filter-btn.active {
-    background: #2C3E50;
-    color: white;
+.filter-btn.active,
+.filter-btn:hover,
+.filter-btn:focus {
+    background: var(--primary-color);
+    color: var(--text-color-light);
+}
+
+.filter-btn:focus-visible {
+    outline: 3px solid var(--accent-color-active);
+    outline-offset: 1px;
 }
 
 /* Form updates */
@@ -587,7 +763,7 @@ footer p {
 }
 
 .error-message {
-    color: #ff4444;
+    color: var(--accent-color-active); /* Using a theme color for errors */
     font-size: 0.8rem;
     margin-top: 0.25rem;
     display: none;
@@ -595,10 +771,10 @@ footer p {
 
 .success-message {
     text-align: center;
-    color: #28a745;
+    color: var(--secondary-color); /* Using a theme color for success */
     padding: 1rem;
     border-radius: 5px;
-    background: #d4edda;
+    background: #d4edda; /* This could be a variable too, e.g., --success-background */
 }
 
 .hidden {
@@ -636,34 +812,25 @@ footer p {
     }
 }
 
-/* Add/update responsive styles */
+/* Add/update responsive styles (Universal reset *{} is already defined at the top) */
 
-/* Base responsive settings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Responsive typography */
+/* Base Responsive typography */
 html {
-    font-size: 16px;
+    font-size: 100%; /* Use percentage for better accessibility with browser zoom */
 }
 
 @media (max-width: 768px) {
     html {
-        font-size: 14px;
+        font-size: 93.75%; /* Equivalent to 15px if base is 16px */
     }
 }
-
-/* Navbar responsive updates */
 @media (max-width: 768px) {
     #navbar.active {
         width: 100%;
         position: absolute;
         top: 60px;
         right: 0;
-        background: #2C3E50;
+        background: var(--primary-color);
     }
 
     #navbar ul {
@@ -690,7 +857,7 @@ html {
     }
 
     .hero-img {
-        width: 200px;
+        width: 50px; /* Reduced width for a smaller hero image */
         margin-top: 100px;
     }
 
@@ -727,13 +894,13 @@ html {
     }
 
     .project-card {
-        width: 45%;
+        width: calc((100% - var(--projects-gap)) / 2); /* 2 columns with gap */
     }
 }
 
 @media (max-width: 768px) {
     .project-card {
-        width: 100%;
+        width: 100%; /* 1 column, gap will apply vertically */
     }
 
     .project-filters {
@@ -792,6 +959,9 @@ html {
 
 /* Footer responsive updates */
 @media (max-width: 576px) {
+    body {
+        padding-bottom: 0; /* Remove body padding when footer is not fixed */
+    }
     footer {
         position: relative;
         padding: 1rem;
@@ -814,8 +984,8 @@ html {
 /* Fix section padding for mobile */
 @media (max-width: 768px) {
     .about-section,
-    .skills-section,
-    .contact-section {
+    .skill-section, /* Corrected class name from .skills-section to .skill-section */
+    .contact-section, .terms { /* Added .terms section */
         padding: 3rem 1rem;
     }
 
@@ -833,19 +1003,9 @@ html {
     }
 }
 
-/* Fix overflow issues */
+/* Fix overflow issues - body overflow-x: hidden is already at the top */
+/*
 body {
     overflow-x: hidden;
     width: 100%;
-}
-
-section {
-    width: 100%;
-    overflow-x: hidden;
-}
-
-
-
-
-
-
+}*/

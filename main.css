@@ -194,6 +194,17 @@ letter-spacing: 2px;
     overflow: hidden;
 }
 
+/* Hero section responsive updates */
+@media (max-width: 768px) {
+    /* ... */
+    .hero-img {
+        width: 50px; /* Reduced width for a smaller hero image */
+        margin-top: 100px;
+    }
+    /* ... */
+}
+
+
 .hero-img {
     max-width: 50%;
     height: auto;

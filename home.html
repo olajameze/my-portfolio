@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="James Gomez">
     <title>My Portfolio</title>
     <script src="https://kit.fontawesome.com/b323f4ae67.js" crossorigin="anonymous"></script>
@@ -78,10 +77,10 @@
       <h2>Projects</h2>
       <div class="project-filters">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="javascript">JavaScript</button>
-        <button class="filter-btn" data-filter="react">React</button>
-        <button class="filter-btn" data-filter="web">Web Design</button>
-      </div>
+        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="javascript">JavaScript</button>
+        <button type="button" class="filter-btn" data-filter="react">React</button>
+        <button type="button" class="filter-btn" data-filter="web">Web Design</button>
       <div class="divider-icon">
         <div class="star-divider"></div>
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -100,7 +99,7 @@
             work will be done to improve functionality as well as the design.
             
           </p>
-          <a href="https://olajameze.github.io/ecommerce-website/" target="_blank" class="project-link">Check it Out</a>
+          <a href="https://olajameze.github.io/ecommerce-website/" target="_blank" rel="noopener noreferrer" class="project-link">Check it Out</a>
         </div>
     
         <div class="project-container project-card">
@@ -112,7 +111,7 @@
             with.
             The website was hosted using wix but the back-end and design was done by me.
           </p>
-          <a href="https://www.prefade-virtual.com/" target="_blank" class="project-link">Check it Out</a>
+          <a href="https://www.prefade-virtual.com/" target="_blank" rel="noopener" class="project-link">Check it Out</a>
         </div>
     
         <div class="project-container project-card">
@@ -143,7 +142,7 @@
             <div class="skill-box">
                 <div class="skill-title">
                     <div class="img">
-                        <img src="./img/html.png" class="skill-icon">
+                        <img src="./img/html.png" class="skill-icon" alt="HTML5 icon">
                     </div>
                 <h3>HTML5</h3>
                 </div>
@@ -152,7 +151,7 @@
             <div class="skill-box">
                 <div class="skill-title">
                 <div class="img">
-                    <img src="./img/css.png" class="skill-icon">
+                    <img src="./img/css.png" class="skill-icon" alt="CSS icon">
                 </div>
                 <h3>CSS</h3>
                 </div>
@@ -161,7 +160,7 @@
             <div class="skill-box">
                 <div class="skill-title">
                 <div class="img">
-                    <img src="./img/js.png" class="skill-icon">
+                    <img src="./img/js.png" class="skill-icon" alt="JavaScript icon">
                 </div>
                 <h3>JavaScript</h3>
                 </div>
@@ -170,7 +169,7 @@
             <div class="skill-box">
                 <div class="skill-title">
                 <div class="img">
-                    <img src="./img/reactjs.png" class="skill-icon">
+                    <img src="./img/reactjs.png" class="skill-icon" alt="React.js icon">
                 </div>
                 <h3>React.Js</h3>
                 </div>
@@ -179,8 +178,7 @@
             <div class="skill-box">
                 <div class="skill-title">
                 <div class="img">
-                    <img src="./img/nodejs.png" class="skill-icon">
-                </div>
+                    <img src="./img/nodejs.png" class="skill-icon" alt="Node.js icon">
                 <h3>Node.Js</h3>
                 </div>
             </div>
@@ -188,8 +186,7 @@
             <div class="skill-box">
                 <div class="skill-title">
                 <div class="img">
-                    <img src="./img/sql.png" class="skill-icon">
-                </div>
+                    <img src="./img/sql.png" class="skill-icon" alt="SQL icon">
                 <h3>MySQL</h3>
                 </div>
             </div>
@@ -197,8 +194,7 @@
         <div class="skill-box">
             <div class="skill-title">
             <div class="img">
-                <img src="./img/php.png" class="skill-icon">
-            </div>
+                <img src="./img/php.png" class="skill-icon" alt="PHP icon">
             <h3>Php</h3>
             </div>
         </div>
@@ -206,8 +202,7 @@
           <div class="skill-box">
             <div class="skill-title">
               <div class="img">
-                <img src="./img/jquery.png" class="skill-icon">
-              </div>
+                <img src="./img/jquery.png" class="skill-icon" alt="jQuery icon">
               <h3>Jquery</h3>
             </div>
           </div>
@@ -215,8 +210,7 @@
           <div class="skill-box">
             <div class="skill-title">
               <div class="img">
-                <img src="./img/tailwind.png" class="skill-icon">
-              </div>
+                <img src="./img/tailwind.png" class="skill-icon" alt="Tailwind CSS icon">
               <h3>Tailwind</h3>
             </div>
           </div>
@@ -224,8 +218,7 @@
           <div class="skill-box">
             <div class="skill-title">
               <div class="img">
-                <img src="./img/github.png" class="skill-icon">
-              </div>
+                <img src="./img/github.png" class="skill-icon" alt="GitHub icon">
               <h3>Git</h3>
             </div>
           </div>
@@ -255,8 +248,10 @@
                     <span class="error-message" id="messageError"></span>
                 </div>
                 <div class="form-group checkbox-group">
-                    <input type="checkbox" name="termsConditions" class="termsConditions" value="Term" required>
-                    <label for="terms"> I Accept the <span class="highlight">Terms of Use</span> & <span class="highlight">Privacy Policy</span>.</label>
+                    <label for="terms">
+                        <input type="checkbox" id="terms" name="termsConditions" class="termsConditions" value="Term" required>
+                        I agree to the terms and conditions
+                    </label>
                     <span class="error-message" id="termsError"></span>
                 </div>
                 <button type="submit" class="submit formEntry">Submit</button>
@@ -271,9 +266,9 @@
         <!--Footer-->
         <footer>
           <ul class="social-icons">
-            <li><a href="#"><i class="fab fa-slack"></i></a></li>
-            <li><a href="https://github.com/olajameze"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/james-gomez-585611129/"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="#" title="Slack Profile" aria-label="Visit my Slack profile"><i class="fab fa-slack"></i></a></li>
+            <li><a href="https://github.com/olajameze" title="GitHub Profile" aria-label="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/james-gomez-585611129/" title="LinkedIn Profile" aria-label="Visit my LinkedIn profile"><i class="fab fa-linkedin"></i></a></li>
           </ul>
           <p>&copy; 2025 My Project. All Rights Reserved.</p>
         </footer>

@@ -30,11 +30,15 @@
   </head>
   <body>
     <header id="header">
-      <a href="#" class="logo">James Gomez</a> <!-- Or simply "Portfolio" or your initials -->
-      <div id="toggle"></div> <!-- For mobile menu icon -->
-      <nav id="navbar"> <!-- Changed div to nav for semantic HTML -->
+      <a href="#" class="logo">James Gomez</a>
+      <div id="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="navbar">
         <ul>
-          <li><a href="#projects-section">PROJECTS</a></li> <!-- Consistent casing -->
+          <li><a href="#projects-section">PROJECTS</a></li>
           <li><a href="#about-section">ABOUT</a></li>
           <li><a href="#skills-section">SKILLS</a></li>
           <li><a href="#terms">TERMS</a></li>
@@ -46,15 +50,16 @@
     <!-- hero section -->
     <section class="hero">
         <div class="hero-content">
-            <img src="./img/profile.jpg" class="hero-img" alt="James Gomez, Front-End Developer" > <!-- More descriptive alt text -->
+            <img src="./img/profile.webp" class="hero-img" alt="James Gomez, Front-End Developer">
             <h1 class="hero-title">JAMES GOMEZ</h1>
             <h2 class="hero-subtitle">Turning Ideas Into Interactive Experiences</h2>
-            <div class="divider-icon" role="presentation" aria-hidden="true">
-              <div class="star-divider"></div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-              </svg>
-              <div class="star-divider"></div>
+            <div class="social-links">
+              <a href="https://github.com/olajameze" target="_blank" rel="noopener noreferrer">
+                <img src="./img/github.png" alt="GitHub Profile" class="social-icon">
+              </a>
+              <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer">
+                <img src="./img/linkedin.png" alt="LinkedIn Profile" class="social-icon">
+              </a>
             </div>
             <p class="hero-description">Front-End Developer specializing in creating beautiful, functional, and user-centric web experiences.</p> <!-- Slightly enhanced description -->
             <div class="hero-cta">

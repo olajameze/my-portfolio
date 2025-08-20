@@ -57,8 +57,8 @@
               <a href="https://github.com/olajameze" target="_blank" rel="noopener noreferrer">
                 <img src="./img/github.png" alt="GitHub Profile" class="social-icon">
               </a>
-              <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer">
-                <img src="./img/linkedin.png" alt="LinkedIn Profile" class="social-icon">
+              <a href="www.linkedin.com/in/james-gomez-585611129" target="_blank" rel="noopener noreferrer">
+                <img src="./img/linkedin-logo-3.png" alt="LinkedIn Profile" class="social-icon">
               </a>
             </div>
             <p class="hero-description">Front-End Developer specializing in creating beautiful, functional, and user-centric web experiences.</p> <!-- Slightly enhanced description -->
@@ -86,44 +86,62 @@
            user-centric digital products.</p> <!-- Refined for professionalism and flow -->
     </section>
 
-    <!-- project section -->
-    <section id="projects-section" class="projects" data-aos="fade-left" data-aos-duration="1000">
-      <h2>My Projects</h2> <!-- Changed to "My Projects" -->
-       <!-- Moved the closing div for project-filters to wrap the buttons -->
-      <div class="divider-icon">
-        <div class="star-divider"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-        </svg>
-        <div class="star-divider"></div>
+    <!--project section -->
+<section id="projects-section" class="projects" data-aos="fade-left" data-aos-duration="1000">
+  <h2>My Projects</h2>
+  
+  <div class="divider-icon">
+    <div class="star-divider"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+    </svg>
+    <div class="star-divider"></div>
+  </div>
+  
+  <div class="projects-container">
+    <div class="project-card">
+      <div class="project-image">
+        <img src="img/p1.png" alt="Weathers Pest Solution Web Application">
       </div>
-      <div class="projects-container">
-        <div class="project-container project-card">
-          <img src="img/p1.png" alt="Screenshot of E-commerce Webapp homepage" loading="lazy" /> <!-- Descriptive alt text -->
-          <h3 class="project-title">Weathers Pest Solution</h3>
-          <p class="project-details">
-            Developed a web application for Weathers Pest Solution, a pest control company, using React and Node.js, 
-            integrating with a PostgreSQL database to manage customer data. This project showcased my skills in 
-            front-end development, back-end architecture, and database management, providing a practical application 
-            of my knowledge in web development. The application allowed users to manage customer information, schedule 
-            appointments, and track payment status, offering a comprehensive solution for pest control services
-          </p> <!-- Rephrased description -->
-          <a href="https://weathers-pest-solutions.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Check it Out</a>
+      <div class="project-content">
+        <h3 class="project-title">Weathers Pest Solution</h3>
+        <p class="project-details">
+          A comprehensive web application for a pest control company built with React and Node.js. 
+          The platform features customer management, appointment scheduling, and payment tracking 
+          with a PostgreSQL database backend.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">Express</span>
         </div>
-
-        <div class="project-container project-card">
-          <img src="img/p3.png" alt="Screenshot of JavaScript Calculator" loading="lazy" /> <!-- Descriptive alt text -->
-          <h3 class="project-title">DrivEdify</h3>
-          <p class="project-details">
-           DrivEdify is a web app for driving instructors that combines scheduling, 
-           student tracking, and payment management with interactive tools like 2D road simulations and quizzes. 
-           Created to fill a gap between administration and engaging lesson content, it ensures only licensed instructors use the platform for a more efficient and effective teaching experience.
-          </p> <!-- Rephrased description -->
-          <!-- IMPORTANT: Replace with the actual live URL once hosted -->
- <a href="https://drivedify.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Check it Out</a>
-        </div> 
+        <a href="https://weathers-pest-solutions.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
       </div>
-    </section>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image">
+        <img src="img/p3.png" alt="DrivEdify Web Application">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">DrivEdify</h3>
+        <p class="project-details">
+          A specialized web app for driving instructors featuring scheduling, student tracking, 
+          and payment management. Includes interactive tools like 2D road simulations and quizzes 
+          for an enhanced teaching experience.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Canvas API</span>
+        </div>
+        <a href="https://drivedify.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- skills -->
     <section id="skills-section" class="skills-section" data-aos="fade-up-left" data-aos-duration="1000">

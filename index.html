@@ -483,16 +483,71 @@
 </section>
 
     <!--Footer-->
-    <footer>
-      <ul class="social-icons">
-        <!-- Consider adding your actual Slack profile link or removing if not applicable -->
-        <li><a href="#" title="Slack Profile" aria-label="Visit my Slack profile"><i class="fab fa-slack"></i></a></li>
-        <li><a href="https://github.com/olajameze" target="_blank" rel="noopener noreferrer" title="GitHub Profile" aria-label="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/james-gomez-585611129/" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile" aria-label="Visit my LinkedIn profile"><i class="fab fa-linkedin"></i></a></li>
-      </ul>
-      <!-- Dynamic year and updated project name -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>James Gomez</h3>
+        <p>Front-End Developer creating beautiful, functional, and user-centric web experiences.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li>Web Development</li>
+          <li>UI/UX Design</li>
+          <li>Front-End Development</li>
+          <li>Responsive Design</li>
+        </ul>
+      </div>
+      
+      <div class="footer-connect">
+        <h4>Connect</h4>
+        <ul class="social-icons">
+          <li><a href="https://github.com/olajameze" target="_blank" rel="noopener noreferrer" title="GitHub Profile" aria-label="Visit my GitHub profile">
+            <i class="fab fa-github"></i>
+          </a></li>
+          <li><a href="https://www.linkedin.com/in/james-gomez-585611129/" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile" aria-label="Visit my LinkedIn profile">
+            <i class="fab fa-linkedin"></i>
+          </a></li>
+          <li><a href="#" title="Email" aria-label="Send me an email">
+            <i class="fas fa-envelope"></i>
+          </a></li>
+          <li><a href="#" title="Twitter" aria-label="Visit my Twitter profile">
+            <i class="fab fa-twitter"></i>
+          </a></li>
+        </ul>
+        
+        <div class="newsletter">
+          <p>Stay updated with my latest projects</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" aria-label="Your email address">
+            <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
       <p>&copy; <span id="currentYear"></span> James Gomez. All Rights Reserved.</p>
-    </footer>
+      <div class="legal-links">
+        <a href="#terms">Terms & Conditions</a>
+        <span>|</span>
+        <a href="#" class="privacy-policy">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
     <!-- Scripts: Placed at the end of the body for faster page load perception -->
     <!-- Your custom application logic -->
@@ -508,5 +563,16 @@
         }
       });
     </script>
+
+    <script>
+  // Update copyright year automatically
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentYearSpan = document.getElementById('currentYear');
+    if (currentYearSpan) {
+      currentYearSpan.textContent = new Date().getFullYear();
+    }
+  });
+</script>
+
   </body>
 </html>

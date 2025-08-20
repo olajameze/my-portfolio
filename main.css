@@ -143,11 +143,21 @@ z-index: 9999;
 overflow: hidden; /* Ensure overflow is hidden */
 }
 
+#navbar ul {
+  justify-content: center; /* Center the navbar links */
+}
+
+
 
 
 #navbar.active {
 width: 100%; /* Ensure full width when active */
 }
+
+#navbar ul {
+  justify-content: center; /* Center the navbar links */
+}
+
 
 
 

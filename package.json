@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "aos": "^2.3.4"
+  },
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
   }
 }

@@ -135,17 +135,21 @@ background: var(--accent-color-active);
 #navbar {
 position: relative;
 height: 60px;
-right: 60px;
+right: 0; /* Adjusted to align properly */
 background: var(--primary-color);
 transition: 0.5s;
-width: 0px;
+width: 100%; /* Ensure full width on mobile */
 z-index: 9999;
-overflow: hidden; /* Duplicated overflow: hidden removed */
+overflow: hidden; /* Ensure overflow is hidden */
 }
 
+
+
 #navbar.active {
-width: 660px;
+width: 100%; /* Ensure full width when active */
 }
+
+
 
 #navbar ul {
 position: relative;
@@ -1008,4 +1012,3 @@ html {
 body {
     overflow-x: hidden;
     width: 100%;
-}*/

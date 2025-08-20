@@ -395,40 +395,92 @@
   </div>
 </section>
 
-    <!-- contact section -->
-    <!-- Removed h2 from outside, integrated below -->
-    <section id="contact-section" class="contact-section" data-aos="fade-down-right" data-aos-duration="1000">
-        <div class="wrapper">
-            <form class="form" id="contactForm" novalidate> <!-- novalidate because custom validation is used -->
-                <div class="pageTitle title">Get In Touch</div> <!-- Changed to "Get In Touch" for a common CTA phrase -->
-                <div class="secondaryTitle title">Have a project in mind or want to connect? Please fill out this form.</div>
-                <div class="form-group">
-                    <input type="text" name="name" id="name" class="name formEntry" placeholder="Your Name" required />
-                    <span class="error-message" id="nameError"></span>
+  <!-- Contact Form Section -->
+    <section id="contact-section" class="contact-section" data-aos="fade-up" data-aos-duration="1000">
+    <div class="contact-container">
+        <div class="contact-header">
+            <h2 class="contact-title">Get In Touch</h2>
+            <p class="contact-subtitle">Have a project in mind or want to connect? I'd love to hear from you. Send me a message and I'll respond as soon as possible.</p>
+        </div>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p>olajameze.jg@googlemail.com</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="email" name="email" id="email" class="email formEntry" placeholder="Your Email" required/>
-                    <span class="error-message" id="emailError"></span>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p>+44 7897 123 4567</p>
+                    </div>
                 </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>UK</p>
+                    </div>
+                </div>
+            </div>
+            
+            <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                </div>
+                
                 <div class="form-group">
-                    <textarea name="message" id="message" class="message formEntry" placeholder="Your Message" required></textarea>
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" class="form-input" rows="5" placeholder="Tell me about your project or question..." required></textarea>
                     <span class="error-message" id="messageError"></span>
                 </div>
+                
                 <div class="form-group checkbox-group">
-                    <label for="terms">
-                        <input type="checkbox" id="terms" name="termsConditions" class="termsConditions" value="consent" required> <!-- Changed value for clarity -->
-                        <!-- Rephrased for better context in a portfolio -->
-                        I consent to James Gomez contacting me in response to this message.
-                    </label>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="terms" name="termsConditions" class="checkbox-input" required>
+                        <label for="terms" class="checkbox-label">
+                            I consent to James Gomez contacting me in response to this message
+                        </label>
+                    </div>
                     <span class="error-message" id="termsError"></span>
                 </div>
-                <button type="submit" class="submit formEntry">Send Message</button> <!-- More specific button text -->
+                
+                <button type="submit" class="submit-button">
+                    <span class="button-text">Send Message</span>
+                    <i class="fas fa-paper-plane button-icon"></i>
+                </button>
             </form>
-            <div id="successMessage" class="success-message hidden">
-                Thank you for your message! I'll get back to you soon.
-            </div>
         </div>
-    </section>
+        
+        <div id="successMessage" class="success-message hidden">
+            <i class="fas fa-check-circle success-icon"></i>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for your message. I'll get back to you as soon as possible.</p>
+        </div>
+    </div>
+</section>
 
     <!--Footer-->
     <footer>

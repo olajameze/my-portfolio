@@ -1,0 +1,12 @@
+<svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+  <rect width="140" height="140" rx="24" fill="#0f172a"></rect>
+
+  <!-- Code brackets -->
+  <text x="25" y="80" font-size="40" fill="#4a90e2" font-family="monospace">&lt;</text>
+  <text x="95" y="80" font-size="40" fill="#4a90e2" font-family="monospace">/&gt;</text>
+
+  <!-- JG -->
+  <text x="50%" y="55%" text-anchor="middle" fill="#ffffff" font-size="28" font-family="Arial" dy=".3em">
+    JG
+  </text>
+</svg>

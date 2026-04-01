@@ -14,21 +14,25 @@ export default async function handler(req, res) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const inboxEmail = process.env.CONTACT_TO_EMAIL || "YOUR_EMAIL@gmail.com";
+  const fromEmail = process.env.RESEND_FROM_EMAIL || "Portfolio <onboarding@resend.dev>";
+  const autoReplyFromEmail =
+    process.env.RESEND_AUTOREPLY_FROM_EMAIL || fromEmail;
 
   if (!apiKey) {
     return res.status(500).json({ success: false });
   }
 
   try {
-    await fetch("https://api.resend.com/emails", {
+    const ownerEmailRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Portfolio <onboarding@resend.dev>",
+        from: fromEmail,
         to: inboxEmail,
+        reply_to: email,
         subject: `New message from ${name}`,
         html: `
           <h2>New Contact Message</h2>
@@ -39,14 +43,14 @@ export default async function handler(req, res) {
       }),
     });
 
-    await fetch("https://api.resend.com/emails", {
+    const autoReplyRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Your Portfolio <onboarding@resend.dev>",
+        from: autoReplyFromEmail,
         to: email,
         subject: "Thanks for your message!",
         html: `
@@ -58,6 +62,10 @@ export default async function handler(req, res) {
         `,
       }),
     });
+
+    if (!ownerEmailRes.ok || !autoReplyRes.ok) {
+      return res.status(500).json({ success: false });
+    }
 
     return res.status(200).json({ success: true });
   } catch (err) {

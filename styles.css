@@ -34,6 +34,13 @@ img {
   height: auto;
 }
 
+.logo {
+  transition: transform 0.2s ease;
+}
+.logo:hover {
+  transform: scale(1.05);
+}
+
 @media (max-width: 640px) {
   .bg-grid {
     background-size: 24px 24px;

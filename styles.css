@@ -41,6 +41,15 @@ img {
   transform: scale(1.05);
 }
 
+.honeypot-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 @media (max-width: 640px) {
   .bg-grid {
     background-size: 24px 24px;

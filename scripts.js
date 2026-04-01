@@ -61,4 +61,53 @@ document.addEventListener("DOMContentLoaded", () => {
       closeModal();
     }
   });
+
+  const form = document.querySelector("form");
+  if (!form) return;
+
+  const button = form.querySelector("button");
+  const honeypot = document.querySelector("#website");
+  const defaultButtonText = button ? button.innerText : "Send Message";
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (honeypot && honeypot.value) return;
+    if (!button) return;
+
+    button.disabled = true;
+    button.innerText = "Sending...";
+
+    const name = document.querySelector("#name")?.value.trim() || "";
+    const email = document.querySelector("#email")?.value.trim() || "";
+    const message = document.querySelector("#message")?.value.trim() || "";
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message, website: honeypot?.value || "" }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        form.reset();
+        button.innerText = "Sent ✔";
+
+        setTimeout(() => {
+          button.innerText = defaultButtonText;
+          button.disabled = false;
+        }, 2000);
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (err) {
+      button.innerText = "Error ❌";
+      setTimeout(() => {
+        button.innerText = defaultButtonText;
+        button.disabled = false;
+      }, 2000);
+    }
+  });
 });

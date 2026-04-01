@@ -14,16 +14,18 @@ export default async function handler(req, res) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const inboxEmail = process.env.CONTACT_TO_EMAIL || "YOUR_EMAIL@gmail.com";
-  const fromEmail = process.env.RESEND_FROM_EMAIL || "Portfolio <onboarding@resend.dev>";
+  const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
   const autoReplyFromEmail =
     process.env.RESEND_AUTOREPLY_FROM_EMAIL || fromEmail;
 
   if (!apiKey) {
+    console.error("Missing RESEND_API_KEY");
     return res.status(500).json({ success: false });
   }
 
   try {
-    const ownerEmailRes = await fetch("https://api.resend.com/emails", {
+    // Send email to owner
+    const ownerRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
@@ -43,7 +45,14 @@ export default async function handler(req, res) {
       }),
     });
 
-    const autoReplyRes = await fetch("https://api.resend.com/emails", {
+    if (!ownerRes.ok) {
+      const errorText = await ownerRes.text();
+      console.error("Owner email failed:", ownerRes.status, errorText);
+      return res.status(500).json({ success: false, error: errorText });
+    }
+
+    // Send auto-reply to client
+    const autoRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
@@ -63,12 +72,16 @@ export default async function handler(req, res) {
       }),
     });
 
-    if (!ownerEmailRes.ok || !autoReplyRes.ok) {
-      return res.status(500).json({ success: false });
+    if (!autoRes.ok) {
+      const errorText = await autoRes.text();
+      console.error("Auto-reply failed:", autoRes.status, errorText);
+      // Still return success if owner email succeeded? For now, fail if auto-reply fails.
+      return res.status(500).json({ success: false, error: errorText });
     }
 
     return res.status(200).json({ success: true });
   } catch (err) {
-    return res.status(500).json({ success: false });
+    console.error("Unexpected error:", err);
+    return res.status(500).json({ success: false, error: err.message });
   }
 }

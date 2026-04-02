@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   // ✅ HARDCODE your verified domain address
   const apiKey = process.env.RESEND_API_KEY;
   const inboxEmail = process.env.CONTACT_TO_EMAIL || "olajameze.jg@googlemail.com";
-  const fromEmail = "hello@jgdev.co.uk";   // Must be on your verified domain
+  const fromEmail = process.env.RESEND_FROM_EMAIL || "hello@jgdev.co.uk";  // Must be on your verified domain
   const autoReplyFromEmail = fromEmail;
 
   if (!apiKey) {

@@ -294,20 +294,36 @@
                     </div>
                     <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-soft">
                         <form id="contact-form" class="space-y-6">
+                            <!-- Honeypot (kept as is) -->
                             <label for="website" class="sr-only">Website (leave blank)</label>
                             <input type="text" id="website" name="website" class="honeypot-field" autocomplete="off">
+                            
                             <div>
                                 <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
                                 <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white">
                             </div>
+                            
                             <div>
                                 <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
                                 <input type="email" id="email" name="email" required placeholder="john@company.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white">
                             </div>
+                            
+                            <!-- NEW DROPDOWN: Service Tier -->
+                            <div>
+                                <label for="serviceTier" class="block text-sm font-medium text-slate-700 mb-1">Service Tier</label>
+                                <select id="serviceTier" name="serviceTier" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white">
+                                    <option value="" disabled selected>– Select your package –</option>
+                                    <option value="Starter Website">Starter Website (£400–750)</option>
+                                    <option value="Web App">Web App (£750–1500)</option>
+                                    <option value="Advanced Systems">Advanced Systems (£1500+)</option>
+                                </select>
+                            </div>
+                            
                             <div>
                                 <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Project Details</label>
                                 <textarea id="message" name="message" required rows="4" placeholder="Tell me about your goals, timeline, and budget..." class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white resize-y"></textarea>
                             </div>
+                            
                             <button type="submit" class="inline-flex items-center justify-center px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-hover transition-colors">Send Project Request</button>
                         </form>
                     </div>

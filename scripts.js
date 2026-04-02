@@ -81,12 +81,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = document.querySelector("#name")?.value.trim() || "";
     const email = document.querySelector("#email")?.value.trim() || "";
     const message = document.querySelector("#message")?.value.trim() || "";
+    // ✅ NEW: Get selected service tier
+    const serviceTier = document.querySelector("#serviceTier")?.value || "";
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message, website: honeypot?.value || "" }),
+        // ✅ NEW: Include serviceTier in the payload
+        body: JSON.stringify({ name, email, message, serviceTier, website: honeypot?.value || "" }),
       });
 
       const data = await res.json();

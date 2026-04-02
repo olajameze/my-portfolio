@@ -13,10 +13,11 @@ export default async function handler(req, res) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const inboxEmail = process.env.CONTACT_TO_EMAIL || "YOUR_EMAIL@gmail.com";
-  const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
-  const autoReplyFromEmail =
-    process.env.RESEND_AUTOREPLY_FROM_EMAIL || fromEmail;
+  const inboxEmail = process.env.CONTACT_TO_EMAIL || "olajameze.jg@googlemail.com";
+  
+  // ✅ Use your verified domain address – either from env or hardcoded
+  const fromEmail = process.env.RESEND_FROM_EMAIL || "hello@jgdev.co.uk";
+  const autoReplyFromEmail = process.env.RESEND_AUTOREPLY_FROM_EMAIL || fromEmail;
 
   if (!apiKey) {
     console.error("Missing RESEND_API_KEY");
@@ -24,7 +25,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Send email to owner
+    // Send email to owner (you)
     const ownerRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -75,8 +76,8 @@ export default async function handler(req, res) {
     if (!autoRes.ok) {
       const errorText = await autoRes.text();
       console.error("Auto-reply failed:", autoRes.status, errorText);
-      // Still return success if owner email succeeded? For now, fail if auto-reply fails.
-      return res.status(500).json({ success: false, error: errorText });
+      // Don't fail the whole request – the owner still got the message
+      // return res.status(500).json({ success: false, error: errorText });
     }
 
     return res.status(200).json({ success: true });

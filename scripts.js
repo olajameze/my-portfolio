@@ -69,6 +69,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const honeypot = document.querySelector("#website");
   const defaultButtonText = button ? button.innerText : "Send Message";
 
+// Deposit button dynamic logic
+const tierSelect = document.getElementById("serviceTier");
+const depositContainer = document.getElementById("deposit-button-container");
+const depositButton = document.getElementById("deposit-button");
+
+// Map tiers to Stripe payment links
+const depositLinks = {
+    "Starter Website": "https://buy.stripe.com/28E4gy42Sgtp4Pi8vK5Vu00",
+    "Web App": "https://buy.stripe.com/00w28q1UK0urgy0bHW5Vu01",
+    "Advanced Systems": "https://buy.stripe.com/bJedR8gPE0ur81u8vK5Vu02"
+};
+
+// Deposit amounts for display
+const depositAmounts = {
+    "Starter Website": "£200",
+    "Web App": "£340",
+    "Advanced Systems": "£500+"
+};
+
+if (tierSelect && depositContainer && depositButton) {
+    tierSelect.addEventListener("change", function() {
+        const selected = this.value;
+        if (selected && depositLinks[selected]) {
+            depositButton.href = depositLinks[selected];
+            depositButton.innerText = `Pay Deposit (${depositAmounts[selected]})`;
+            depositContainer.classList.remove("hidden");
+        } else {
+            depositContainer.classList.add("hidden");
+        }
+    });
+}
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 

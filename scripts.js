@@ -66,13 +66,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!form) return;
 
   const button = form.querySelector("button");
-  const honeypot = document.querySelector("#website");
-  const defaultButtonText = button ? button.innerText : "Send Message";
+  const btnSpinner = document.getElementById("submit-spinner");
+  const btnText = document.getElementById("submit-text");
+  const successMessage = document.getElementById("form-success");
 
-// Deposit button dynamic logic
-const tierSelect = document.getElementById("serviceTier");
-const depositContainer = document.getElementById("deposit-button-container");
-const depositButton = document.getElementById("deposit-button");
+  const tierSelect = document.getElementById("serviceTier");
+  const honeypot = document.querySelector("#website");
+  const defaultButtonText = button ? button.innerText : "Send Project Request";
 
 // Map tiers to Stripe payment links
 const depositLinks = {
@@ -85,21 +85,21 @@ const depositLinks = {
 const depositAmounts = {
     "Starter Website": "£200",
     "Web App": "£340",
-    "Advanced Systems": "£500+"
+    "Advanced Systems": "£500"
 };
 
-if (tierSelect && depositContainer && depositButton) {
+  if (tierSelect && button) {
     tierSelect.addEventListener("change", function() {
+        if (successMessage) successMessage.classList.add("hidden");
         const selected = this.value;
-        if (selected && depositLinks[selected]) {
-            depositButton.href = depositLinks[selected];
-            depositButton.innerText = `Pay Deposit (${depositAmounts[selected]})`;
-            depositContainer.classList.remove("hidden");
-        } else {
-            depositContainer.classList.add("hidden");
-        }
+        const newText = selected && depositLinks[selected] 
+            ? `Send Request & Pay Deposit (${depositAmounts[selected]})`
+            : defaultButtonText;
+        
+        if (btnText) btnText.innerText = newText;
+        else button.innerText = newText;
     });
-}
+  }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -108,13 +108,15 @@ if (tierSelect && depositContainer && depositButton) {
     if (!button) return;
 
     button.disabled = true;
-    button.innerText = "Sending...";
+    if (btnSpinner) btnSpinner.classList.remove("hidden");
+    if (btnText) btnText.innerText = "Sending...";
+
+    if (successMessage) successMessage.classList.add("hidden");
 
     const name = document.querySelector("#name")?.value.trim() || "";
     const email = document.querySelector("#email")?.value.trim() || "";
     const message = document.querySelector("#message")?.value.trim() || "";
-    // ✅ NEW: Get selected service tier
-    const serviceTier = document.querySelector("#serviceTier")?.value || "";
+    const serviceTier = tierSelect?.value || "";
 
     try {
       const res = await fetch("/api/contact", {
@@ -128,19 +130,31 @@ if (tierSelect && depositContainer && depositButton) {
 
       if (data.success) {
         form.reset();
-        button.innerText = "Sent ✔";
+        if (btnSpinner) btnSpinner.classList.add("hidden");
+        if (btnText) btnText.innerText = "Sent ✔";
+        
+        if (successMessage) successMessage.classList.remove("hidden");
 
-        setTimeout(() => {
-          button.innerText = defaultButtonText;
-          button.disabled = false;
-        }, 2000);
+        if (serviceTier && depositLinks[serviceTier]) {
+            // Redirect to Stripe checkout after a successful form submission
+            setTimeout(() => {
+                window.location.href = depositLinks[serviceTier];
+            }, 1500);
+        } else {
+            setTimeout(() => {
+              if (btnText) btnText.innerText = defaultButtonText;
+              button.disabled = false;
+            }, 2000);
+        }
       } else {
         throw new Error("Submission failed");
       }
     } catch (err) {
-      button.innerText = "Error ❌";
+      if (btnSpinner) btnSpinner.classList.add("hidden");
+      if (btnText) btnText.innerText = "Error ❌";
+
       setTimeout(() => {
-        button.innerText = defaultButtonText;
+        if (btnText) btnText.innerText = defaultButtonText;
         button.disabled = false;
       }, 2000);
     }

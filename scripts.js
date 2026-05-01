@@ -140,6 +140,10 @@ const depositAmounts = {
         body: JSON.stringify({ name, email, message, serviceTier, website: honeypot?.value || "" }),
       });
 
+      if (!res.ok) {
+        throw new Error(`Server responded with ${res.status}`);
+      }
+
       const data = await res.json();
 
       if (data.success) {

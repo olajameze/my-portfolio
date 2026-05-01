@@ -25,6 +25,9 @@
 </head>
 <body class="bg-white text-slate-800 font-sans leading-relaxed selection:bg-primary selection:text-white antialiased overflow-x-hidden">
 
+    <!-- Top Progress Bar -->
+    <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-blue-600 z-[100] w-0 transition-all duration-500 ease-out pointer-events-none"></div>
+
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/50">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center focus:outline-none rounded" aria-label="James Gomez Home">
@@ -115,35 +118,34 @@
                     <p class="text-xl text-slate-600">Deep dives into recent partnerships, highlighting the business challenges faced and the technical solutions delivered.</p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <article class="group bg-white rounded-3xl border border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full">
-                        <img 
-                        src="img/weathers'.png" 
-                        alt="Weathers Pest Solutions dashboard showing pest control services and pricing" 
-                        class="w-full h-56 object-cover"
-                        loading="lazy"
-                    >
+                <div class="relative group/carousel">
+                    <div id="project-carousel" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-6 pb-8 scrollbar-hide">
+                        <article class="flex-shrink-0 w-[85vw] md:w-[400px] snap-center group bg-white rounded-2xl border border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full">
+                        <div class="relative overflow-hidden">
+                            <img 
+                                src="img/weathers'.png" 
+                                alt="Weathers Pest Solutions dashboard showing pest control services and pricing" 
+                                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                                loading="lazy"
+                            >
+                        </div>
                         
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold text-slate-900 mb-6">Weathers Pest Solution</h3>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-slate-900 mb-4">Weathers Pest Solution</h3>
                             
-                            <div class="space-y-5 flex-grow mb-8">
-                                <div>
-                                    <h4 class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">The Problem</h4>
-                                    <p class="text-slate-600 text-sm">Client had no online presence, limiting their ability to attract new customers and establish credibility. They needed a professional website to showcase their services and generate leads.</p>
+                            <div class="space-y-4 flex-grow mb-6">
+                                <div class="h-24 overflow-hidden">
+                                    <h4 class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">The Problem</h4>
+                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">Client had no online presence, limiting their ability to attract new customers and establish credibility. They needed a professional website to showcase their services.</p>
                                 </div>
-                                <div>
-                                    <h4 class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">The Solution</h4>
-                                    <p class="text-slate-600 text-sm">Created a professional business website with service pages, contact forms, and SEO optimization to establish their online presence and drive customer inquiries.</p>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">The Outcome</h4>
-                                    <p class="text-slate-900 font-medium">Increased online visibility and lead generation, establishing a professional digital presence that helps attract new customers and builds trust with potential clients.</p>
+                                <div class="h-24 overflow-hidden">
+                                    <h4 class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">The Solution</h4>
+                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">Created a professional business website with service pages, contact forms, and SEO optimization to drive customer inquiries.</p>
                                 </div>
                             </div>
 
                             <div class="mt-auto">
-                                <div class="flex flex-wrap gap-2 mb-6">
+                                <div class="flex flex-wrap gap-1.5 mb-6">
                                     <span class="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">HTML5</span>
                                     <span class="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">CSS3</span>
                                     <span class="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">JavaScript</span>
@@ -161,33 +163,31 @@
                         </div>
                     </article>
 
-                    <article class="group bg-white rounded-3xl border border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full">
-                        <img 
-                            src="img/ojii.png" 
-                            alt="Ojii Umoja platform homepage showcasing Black-owned businesses and community resources" 
-                            class="w-full h-56 object-cover"
-                            loading="lazy"
-                        >
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold text-slate-900 mb-6">Ojii Umoja</h3>
+                        <article class="flex-shrink-0 w-[85vw] md:w-[400px] snap-center group bg-white rounded-2xl border border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full">
+                        <div class="relative overflow-hidden">
+                            <img 
+                                src="img/ojii.png" 
+                                alt="Ojii Umoja platform homepage showcasing Black-owned businesses and community resources" 
+                                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-slate-900 mb-4">Ojii Umoja</h3>
                             
-                            <div class="space-y-5 flex-grow mb-8">
-                                <div>
-                                    <h4 class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">The Problem</h4>
-                                    <p class="text-slate-600 text-sm">Black communities worldwide lack a centralized, culturally relevant platform to discover trusted Black‑owned businesses, events, and essential services. Existing directories are fragmented, outdated, or not designed with Pan‑African values in mind.</p>
+                            <div class="space-y-4 flex-grow mb-6">
+                                <div class="h-24 overflow-hidden">
+                                    <h4 class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">The Problem</h4>
+                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">Black communities lack a centralized, culturally relevant platform to discover trusted businesses and services. Existing directories are fragmented.</p>
                                 </div>
-                                <div>
-                                    <h4 class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">The Solution</h4>
-                                    <p class="text-slate-600 text-sm">As <strong>Front‑end lead</strong>, I collaborated on building Ojii Umoja – a modern, full‑stack platform connecting users with Black‑owned food, beauty, legal, healthcare, and cultural services. Features include advanced search and filters, personalised recommendations, community forums, event listings, and a premium ad‑free experience. Tech stack: Next.js, TypeScript, React, Tailwind CSS.</p>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">The Outcome</h4>
-                                    <p class="text-slate-900 font-medium">The platform empowers Black entrepreneurs by increasing visibility, helps users find trusted services and authentic cultural experiences, and fosters a sense of belonging through community stories, reviews, and events.</p>
+                                <div class="h-24 overflow-hidden">
+                                    <h4 class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">The Solution</h4>
+                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">A modern full-stack platform connecting users with cultural services, featuring advanced search, recommendations, and forums.</p>
                                 </div>
                             </div>
                     
                             <div class="mt-auto">
-                                <div class="flex flex-wrap gap-2 mb-6">
+                                <div class="flex flex-wrap gap-1.5 mb-6">
                                     <span class="px-3 py-1.5 bg-purple-50 text-purple-700 text-xs font-semibold rounded-full">Next.js</span>
                                     <span class="px-3 py-1.5 bg-purple-50 text-purple-700 text-xs font-semibold rounded-full">TypeScript</span>
                                     <span class="px-3 py-1.5 bg-purple-50 text-purple-700 text-xs font-semibold rounded-full">React</span>
@@ -203,6 +203,67 @@
                             </div>
                         </div>
                     </article>
+
+                    <!-- PestTrace -->
+                        <article class="flex-shrink-0 w-[85vw] md:w-[400px] snap-center group bg-white rounded-2xl border border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full">
+                        <div class="relative overflow-hidden">
+                            <img 
+                                src="img/pestt.png" 
+                                alt="PestTrace SaaS platform for pest control management" 
+                                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                                loading="lazy"
+                            >
+                            <div class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-slate-900 text-[10px] font-bold uppercase tracking-widest rounded-full border border-slate-200 shadow-sm">
+                                In Development
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-slate-900 mb-4">PestTrace</h3>
+                            
+                            <div class="space-y-4 flex-grow mb-6">
+                                <div class="h-24 overflow-hidden">
+                                    <h4 class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">The Problem</h4>
+                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">Pest control businesses struggle with fragmented management systems, making technician tracking and reporting difficult.</p>
+                                </div>
+                                <div class="h-24 overflow-hidden">
+                                    <h4 class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">The Solution</h4>
+                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">A comprehensive SaaS platform designed to centralize operations, automated scheduling and digital audit trails.</p>
+                                </div>
+                            </div>
+                    
+                            <div class="mt-auto">
+                                <div class="flex flex-wrap gap-1.5 mb-6">
+                                    <span class="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">Next.js</span>
+                                    <span class="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">TypeScript</span>
+                                    <span class="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">Tailwind CSS</span>
+                                    <span class="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">SaaS</span>
+                                </div>
+                                
+                                <div class="flex items-center gap-3">
+                                    <a href="https://www.pesttrace.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300">
+                                        View Landing Page
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                    <!-- Navigation Arrows (Desktop) -->
+                    <button id="carousel-prev" class="hidden lg:flex absolute top-1/2 -left-6 -translate-y-1/2 w-12 h-12 items-center justify-center bg-white border border-slate-200 rounded-full shadow-lg text-slate-600 hover:text-primary transition-all opacity-0 group-hover/carousel:opacity-100 disabled:pointer-events-none disabled:!opacity-0 z-10" aria-label="Previous project">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button id="carousel-next" class="hidden lg:flex absolute top-1/2 -right-6 -translate-y-1/2 w-12 h-12 items-center justify-center bg-white border border-slate-200 rounded-full shadow-lg text-slate-600 hover:text-primary transition-all opacity-0 group-hover/carousel:opacity-100 disabled:pointer-events-none disabled:!opacity-0 z-10" aria-label="Next project">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <!-- Navigation Dots (Mobile) -->
+                    <div id="carousel-dots" class="flex lg:hidden justify-center gap-3 mt-8">
+                        <button class="w-6 h-2.5 rounded-full bg-primary transition-all duration-300" aria-label="Go to project 1"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-slate-200 transition-all duration-300" aria-label="Go to project 2"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-slate-200 transition-all duration-300" aria-label="Go to project 3"></button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -406,7 +467,7 @@
 
                             <!-- Button group: Deposit + Submit side by side -->
                             <div class="flex flex-col sm:flex-row gap-4">
-                                <button type="submit" id="submit-btn" class="w-full inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed">
+                                <button type="submit" id="submit-btn" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed">
                                     <svg id="submit-spinner" class="hidden animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>

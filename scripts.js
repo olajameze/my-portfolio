@@ -69,10 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSpinner = document.getElementById("submit-spinner");
   const btnText = document.getElementById("submit-text");
   const successMessage = document.getElementById("form-success");
+  const progressBar = document.getElementById("progress-bar");
 
   const tierSelect = document.getElementById("serviceTier");
   const honeypot = document.querySelector("#website");
   const defaultButtonText = button ? button.innerText : "Send Project Request";
+  let isProcessing = false;
 
 // Map tiers to Stripe payment links
 const depositLinks = {
@@ -101,6 +103,14 @@ const depositAmounts = {
     });
   }
 
+  // Navigation Guard: Warn user before leaving if processing
+  window.addEventListener("beforeunload", (e) => {
+    if (isProcessing) {
+      e.preventDefault();
+      e.returnValue = "";
+    }
+  });
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -108,9 +118,11 @@ const depositAmounts = {
     if (!button) return;
 
     button.disabled = true;
+    isProcessing = true;
+    if (progressBar) progressBar.style.width = "30%";
+
     if (btnSpinner) btnSpinner.classList.remove("hidden");
     if (btnText) btnText.innerText = "Sending...";
-
     if (successMessage) successMessage.classList.add("hidden");
 
     const name = document.querySelector("#name")?.value.trim() || "";
@@ -119,6 +131,8 @@ const depositAmounts = {
     const serviceTier = tierSelect?.value || "";
 
     try {
+      if (progressBar) progressBar.style.width = "60%";
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -129,7 +143,9 @@ const depositAmounts = {
       const data = await res.json();
 
       if (data.success) {
+        if (progressBar) progressBar.style.width = "100%";
         form.reset();
+        
         if (btnSpinner) btnSpinner.classList.add("hidden");
         if (btnText) btnText.innerText = "Sent ✔";
         
@@ -138,18 +154,23 @@ const depositAmounts = {
         if (serviceTier && depositLinks[serviceTier]) {
             // Redirect to Stripe checkout after a successful form submission
             setTimeout(() => {
+                isProcessing = false; // Release guard before redirect
                 window.location.href = depositLinks[serviceTier];
             }, 1500);
         } else {
             setTimeout(() => {
               if (btnText) btnText.innerText = defaultButtonText;
               button.disabled = false;
+              isProcessing = false;
+              if (progressBar) progressBar.style.width = "0%";
             }, 2000);
         }
       } else {
         throw new Error("Submission failed");
       }
     } catch (err) {
+      isProcessing = false;
+      if (progressBar) progressBar.style.width = "0%";
       if (btnSpinner) btnSpinner.classList.add("hidden");
       if (btnText) btnText.innerText = "Error ❌";
 
@@ -159,4 +180,81 @@ const depositAmounts = {
       }, 2000);
     }
   });
+
+  // Project Carousel Navigation
+  const carousel = document.getElementById("project-carousel");
+  const prevBtn = document.getElementById("carousel-prev");
+  const nextBtn = document.getElementById("carousel-next");
+  const dotContainer = document.getElementById("carousel-dots");
+  const dots = dotContainer?.querySelectorAll("button");
+
+  if (carousel && prevBtn && nextBtn) {
+    let autoPlayInterval;
+
+    const getScrollStep = () => {
+      const item = carousel.querySelector("article");
+      return item ? item.offsetWidth + 24 : carousel.offsetWidth; // 24px matches gap-6
+    };
+
+    const startAutoPlay = () => {
+      autoPlayInterval = setInterval(() => {
+        const isAtEnd = carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 10);
+        if (isAtEnd) {
+          carousel.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          carousel.scrollBy({ left: getScrollStep(), behavior: "smooth" });
+        }
+      }, 4000);
+    };
+
+    const stopAutoPlay = () => clearInterval(autoPlayInterval);
+
+    // Auto-play control: Pause on hover
+    carousel.addEventListener("mouseenter", stopAutoPlay);
+    carousel.addEventListener("mouseleave", startAutoPlay);
+
+    startAutoPlay();
+
+    nextBtn.addEventListener("click", () => {
+      stopAutoPlay();
+      carousel.scrollBy({ left: getScrollStep(), behavior: "smooth" });
+    });
+
+    prevBtn.addEventListener("click", () => {
+      stopAutoPlay();
+      carousel.scrollBy({ left: -getScrollStep(), behavior: "smooth" });
+    });
+
+    const updateNavigationUI = () => {
+      const scrollLeft = carousel.scrollLeft;
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+      // Disable arrows at ends
+      prevBtn.disabled = scrollLeft <= 5;
+      nextBtn.disabled = scrollLeft >= maxScroll - 5;
+
+      // Update Dots
+      if (dots) {
+        const activeIndex = Math.round(scrollLeft / getScrollStep());
+        dots.forEach((dot, i) => {
+          const isActive = i === activeIndex;
+          dot.classList.toggle("bg-primary", isActive);
+          dot.classList.toggle("w-6", isActive);
+          dot.classList.toggle("bg-slate-200", !isActive);
+          dot.classList.toggle("w-2.5", !isActive);
+        });
+      }
+    };
+
+    carousel.addEventListener("scroll", updateNavigationUI);
+    window.addEventListener("resize", updateNavigationUI);
+    updateNavigationUI();
+
+    dots?.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        stopAutoPlay();
+        carousel.scrollTo({ left: i * getScrollStep(), behavior: "smooth" });
+      });
+    });
+  }
 });

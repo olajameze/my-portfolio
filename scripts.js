@@ -261,4 +261,92 @@ const depositAmounts = {
       });
     });
   }
+
+  // Testimonial slideshow
+  const testimonialContainer = document.getElementById('testimonial-slider');
+  const testimonialSlides = testimonialContainer ? testimonialContainer.querySelectorAll('.testimonial-slide') : null;
+  const testimonialDotsContainer = document.getElementById('testimonial-dots');
+  const tPrev = document.getElementById('testimonial-prev');
+  const tNext = document.getElementById('testimonial-next');
+
+  if (testimonialContainer && testimonialSlides && testimonialSlides.length) {
+    let tIndex = 0;
+    const tCount = testimonialSlides.length;
+    const tDots = [];
+    let tInterval = null;
+
+    const showTestimonial = (idx) => {
+      testimonialSlides.forEach((s, i) => {
+        const isActive = i === idx;
+        s.classList.toggle('opacity-0', !isActive);
+        s.classList.toggle('opacity-100', isActive);
+        s.classList.toggle('pointer-events-none', !isActive);
+        s.setAttribute('aria-hidden', String(!isActive));
+        s.setAttribute('aria-label', `${i + 1} of ${tCount}`);
+      });
+
+      tDots.forEach((d, i) => {
+        d.classList.toggle('bg-primary', i === idx);
+        d.classList.toggle('bg-slate-200', i !== idx);
+        d.classList.toggle('w-6', i === idx);
+        d.classList.toggle('w-2.5', i !== idx);
+      });
+    };
+
+    if (testimonialDotsContainer) {
+      testimonialSlides.forEach((_, i) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = i === 0 ? 'w-6 h-2.5 rounded-full bg-primary transition-all duration-300' : 'w-2.5 h-2.5 rounded-full bg-slate-200 transition-all duration-300';
+        btn.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
+        btn.addEventListener('click', () => {
+          stopT();
+          tIndex = i;
+          showTestimonial(tIndex);
+          startT();
+        });
+        testimonialDotsContainer.appendChild(btn);
+        tDots.push(btn);
+      });
+    }
+
+    const startT = () => {
+      stopT();
+      tInterval = setInterval(() => {
+        tIndex = (tIndex + 1) % tCount;
+        showTestimonial(tIndex);
+      }, 6000);
+    };
+
+    const stopT = () => {
+      if (tInterval) {
+        clearInterval(tInterval);
+        tInterval = null;
+      }
+    };
+
+    showTestimonial(0);
+
+    testimonialContainer.addEventListener('mouseenter', stopT);
+    testimonialContainer.addEventListener('mouseleave', startT);
+
+    tNext?.addEventListener('click', () => {
+      stopT();
+      tIndex = (tIndex + 1) % tCount;
+      showTestimonial(tIndex);
+    });
+
+    tPrev?.addEventListener('click', () => {
+      stopT();
+      tIndex = (tIndex - 1 + tCount) % tCount;
+      showTestimonial(tIndex);
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopT(); else startT();
+    });
+
+    startT();
+  }
+
 });

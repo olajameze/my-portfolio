@@ -1,12 +1,18 @@
-<svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-  <rect width="140" height="140" rx="24" fill="#0f172a"></rect>
+<svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">James Gomez logo</title>
+  <defs>
+    <linearGradient id="logoGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+  </defs>
 
-  <!-- Code brackets -->
-  <text x="25" y="80" font-size="40" fill="#4a90e2" font-family="monospace">&lt;</text>
-  <text x="95" y="80" font-size="40" fill="#4a90e2" font-family="monospace">/&gt;</text>
+  <rect width="140" height="140" rx="28" fill="#0f172a" />
+  <path d="M24 36 L70 16 L116 36 L116 96 L70 116 L24 96 Z" fill="#0f172a" stroke="#111827" stroke-width="2" />
+  <path d="M70 16 L116 36 L70 56 L24 36 Z" fill="url(#logoGradient)" />
+  <path d="M24 36 L70 56 L70 116 L24 96 Z" fill="#1e293b" />
+  <path d="M70 56 L116 36 L116 96 L70 116 Z" fill="#1e40af" />
 
-  <!-- JG -->
-  <text x="50%" y="55%" text-anchor="middle" fill="#ffffff" font-size="28" font-family="Arial" dy=".3em">
-    JG
-  </text>
+  <path d="M40 62 H56 V88 H68 V96 H56 V108 H44 V96 H40 Z" fill="#fff" />
+  <path d="M88 68 H104 V84 H94 V92 H104 V108 H92 V92 H88 Z" fill="#fff" />
 </svg>

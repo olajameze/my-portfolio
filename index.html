@@ -29,6 +29,40 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://jamesgomez.dev/img/logo.png">
 
+        <!-- SEO: canonical, robots, author, theme colour -->
+        <link rel="canonical" href="https://jamesgomez.dev/">
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+        <meta name="author" content="James Gomez">
+        <meta name="theme-color" content="#0ea5e9">
+
+        <!-- Structured Data (JSON-LD) for Google -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": "https://jamesgomez.dev/#organization",
+                    "name": "JGDev",
+                    "url": "https://jamesgomez.dev",
+                    "logo": "https://jamesgomez.dev/img/logo.png"
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://jamesgomez.dev/#website",
+                    "url": "https://jamesgomez.dev",
+                    "name": "James Gomez - Front-End Developer",
+                    "publisher": {"@id": "https://jamesgomez.dev/#organization"},
+                    "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": "https://jamesgomez.dev/?s={search_term_string}",
+                        "query-input": "required name=search_term_string"
+                    }
+                }
+            ]
+        }
+        </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -327,6 +327,29 @@ const depositAmounts = {
 
     showTestimonial(0);
 
+    // Make testimonial region keyboard-focusable and support arrow navigation
+    try {
+      testimonialContainer.tabIndex = 0;
+      testimonialContainer.setAttribute('role', 'region');
+      testimonialContainer.setAttribute('aria-roledescription', 'carousel');
+      testimonialContainer.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          tPrev?.click();
+        }
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          tNext?.click();
+        }
+        if (e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();
+          if (tInterval) stopT(); else startT();
+        }
+      });
+    } catch (err) {
+      // ignore if setting attributes fails in some environments
+    }
+
     testimonialContainer.addEventListener('mouseenter', stopT);
     testimonialContainer.addEventListener('mouseleave', startT);
 

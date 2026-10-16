@@ -62,17 +62,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const form = document.querySelector("form");
+  const form = document.getElementById("contact-form");
   if (!form) return;
 
   const button = form.querySelector("button");
   const btnSpinner = document.getElementById("submit-spinner");
   const btnText = document.getElementById("submit-text");
   const successMessage = document.getElementById("form-success");
+  const formError = document.getElementById("form-error");
   const progressBar = document.getElementById("progress-bar");
 
   const tierSelect = document.getElementById("serviceTier");
   const honeypot = document.querySelector("#website");
+  const imageInput = document.getElementById("referenceImages");
+  const imageSelection = document.getElementById("image-selection");
+  const imageError = document.getElementById("image-error");
+  const maxImageCount = 5;
+  const maxImageBytes = 3 * 1024 * 1024;
   const defaultButtonText = button ? button.innerText : "Send Project Request";
   let isProcessing = false;
 
@@ -103,6 +109,55 @@ const depositAmounts = {
     });
   }
 
+  const validateImages = (files) => {
+    if (files.length > maxImageCount) return `Choose no more than ${maxImageCount} images.`;
+    if (files.some((file) => !["image/jpeg", "image/png"].includes(file.type))) {
+      return "Choose JPEG or PNG images only.";
+    }
+
+    const totalBytes = files.reduce((total, file) => total + file.size, 0);
+    if (totalBytes > maxImageBytes) return "Your images are over 3 MB combined. Remove some files or email the rest separately.";
+    return "";
+  };
+
+  if (imageInput) {
+    imageInput.addEventListener("change", () => {
+      const files = Array.from(imageInput.files || []);
+      const error = validateImages(files);
+
+      imageInput.setCustomValidity(error);
+      if (imageError) {
+        imageError.textContent = error;
+        imageError.classList.toggle("hidden", !error);
+      }
+      if (imageSelection) {
+        imageSelection.textContent = files.length
+          ? `${files.length} image${files.length === 1 ? "" : "s"} selected: ${files.map((file) => file.name).join(", ")}`
+          : "No images selected.";
+      }
+    });
+  }
+
+  const encodeImage = (file) => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = typeof reader.result === "string" ? reader.result : "";
+      const separator = result.indexOf(",");
+      if (separator < 0) {
+        reject(new Error("The selected image could not be read."));
+        return;
+      }
+
+      resolve({
+        filename: file.name,
+        contentType: file.type,
+        content: result.slice(separator + 1),
+      });
+    };
+    reader.onerror = () => reject(reader.error || new Error("The selected image could not be read."));
+    reader.readAsDataURL(file);
+  });
+
   // Navigation Guard: Warn user before leaving if processing
   window.addEventListener("beforeunload", (e) => {
     if (isProcessing) {
@@ -117,6 +172,20 @@ const depositAmounts = {
     if (honeypot && honeypot.value) return;
     if (!button) return;
 
+    const imageFiles = Array.from(imageInput?.files || []);
+    const imageValidationError = validateImages(imageFiles);
+    if (imageValidationError) {
+      if (imageInput) {
+        imageInput.setCustomValidity(imageValidationError);
+        imageInput.reportValidity();
+      }
+      if (imageError) {
+        imageError.textContent = imageValidationError;
+        imageError.classList.remove("hidden");
+      }
+      return;
+    }
+
     button.disabled = true;
     isProcessing = true;
     if (progressBar) progressBar.style.width = "30%";
@@ -124,34 +193,55 @@ const depositAmounts = {
     if (btnSpinner) btnSpinner.classList.remove("hidden");
     if (btnText) btnText.innerText = "Sending...";
     if (successMessage) successMessage.classList.add("hidden");
+    if (formError) formError.classList.add("hidden");
 
     const name = document.querySelector("#name")?.value.trim() || "";
     const email = document.querySelector("#email")?.value.trim() || "";
     const message = document.querySelector("#message")?.value.trim() || "";
     const serviceTier = tierSelect?.value || "";
+    const businessName = document.querySelector("#businessName")?.value.trim() || "";
+    const businessInfo = document.querySelector("#businessInfo")?.value.trim() || "";
+    const currentWebsite = document.querySelector("#currentWebsite")?.value.trim() || "";
+    const brandColors = document.querySelector("#brandColors")?.value.trim() || "";
 
     try {
       if (progressBar) progressBar.style.width = "60%";
+      const attachments = await Promise.all(imageFiles.map(encodeImage));
 
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        // ✅ NEW: Include serviceTier in the payload
-        body: JSON.stringify({ name, email, message, serviceTier, website: honeypot?.value || "" }),
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          serviceTier,
+          businessName,
+          businessInfo,
+          currentWebsite,
+          brandColors,
+          attachments,
+          website: honeypot?.value || "",
+        }),
       });
 
-      if (!res.ok) {
-        throw new Error(`Server responded with ${res.status}`);
-      }
-
       const data = await res.json();
+      if (!res.ok) {
+        const message = res.status === 400 && typeof data.message === "string"
+          ? data.message
+          : `Server responded with ${res.status}`;
+        throw new Error(message);
+      }
 
       if (data.success) {
         if (progressBar) progressBar.style.width = "100%";
         form.reset();
+        if (imageInput) imageInput.setCustomValidity("");
+        if (imageSelection) imageSelection.textContent = "No images selected.";
+        if (imageError) imageError.classList.add("hidden");
         
         if (btnSpinner) btnSpinner.classList.add("hidden");
-        if (btnText) btnText.innerText = "Sent ✔";
+        if (btnText) btnText.innerText = "Request sent";
         
         if (successMessage) successMessage.classList.remove("hidden");
 
@@ -173,10 +263,16 @@ const depositAmounts = {
         throw new Error("Submission failed");
       }
     } catch (err) {
+      console.error("Project request could not be sent:", err);
       isProcessing = false;
       if (progressBar) progressBar.style.width = "0%";
       if (btnSpinner) btnSpinner.classList.add("hidden");
-      if (btnText) btnText.innerText = "Error ❌";
+      if (btnText) btnText.innerText = "Could not send";
+      if (formError) {
+        const reason = err instanceof Error ? err.message : "An unexpected error occurred.";
+        formError.textContent = `${reason} Please try again or email olajameze.jg@googlemail.com.`;
+        formError.classList.remove("hidden");
+      }
 
       setTimeout(() => {
         if (btnText) btnText.innerText = defaultButtonText;
@@ -184,83 +280,6 @@ const depositAmounts = {
       }, 2000);
     }
   });
-
-  // Project Carousel Navigation
-  const carousel = document.getElementById("project-carousel");
-  const prevBtn = document.getElementById("carousel-prev");
-  const nextBtn = document.getElementById("carousel-next");
-  const dotContainer = document.getElementById("carousel-dots");
-  const dots = dotContainer?.querySelectorAll("button");
-
-  if (carousel && prevBtn && nextBtn) {
-    let autoPlayInterval;
-
-    const getScrollStep = () => {
-      const item = carousel.querySelector("article");
-      return item ? item.offsetWidth + 24 : carousel.offsetWidth; // 24px matches gap-6
-    };
-
-    const startAutoPlay = () => {
-      autoPlayInterval = setInterval(() => {
-        const isAtEnd = carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 10);
-        if (isAtEnd) {
-          carousel.scrollTo({ left: 0, behavior: "smooth" });
-        } else {
-          carousel.scrollBy({ left: getScrollStep(), behavior: "smooth" });
-        }
-      }, 4000);
-    };
-
-    const stopAutoPlay = () => clearInterval(autoPlayInterval);
-
-    // Auto-play control: Pause on hover
-    carousel.addEventListener("mouseenter", stopAutoPlay);
-    carousel.addEventListener("mouseleave", startAutoPlay);
-
-    startAutoPlay();
-
-    nextBtn.addEventListener("click", () => {
-      stopAutoPlay();
-      carousel.scrollBy({ left: getScrollStep(), behavior: "smooth" });
-    });
-
-    prevBtn.addEventListener("click", () => {
-      stopAutoPlay();
-      carousel.scrollBy({ left: -getScrollStep(), behavior: "smooth" });
-    });
-
-    const updateNavigationUI = () => {
-      const scrollLeft = carousel.scrollLeft;
-      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-
-      // Disable arrows at ends
-      prevBtn.disabled = scrollLeft <= 5;
-      nextBtn.disabled = scrollLeft >= maxScroll - 5;
-
-      // Update Dots
-      if (dots) {
-        const activeIndex = Math.round(scrollLeft / getScrollStep());
-        dots.forEach((dot, i) => {
-          const isActive = i === activeIndex;
-          dot.classList.toggle("bg-primary", isActive);
-          dot.classList.toggle("w-6", isActive);
-          dot.classList.toggle("bg-slate-200", !isActive);
-          dot.classList.toggle("w-2.5", !isActive);
-        });
-      }
-    };
-
-    carousel.addEventListener("scroll", updateNavigationUI);
-    window.addEventListener("resize", updateNavigationUI);
-    updateNavigationUI();
-
-    dots?.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        stopAutoPlay();
-        carousel.scrollTo({ left: i * getScrollStep(), behavior: "smooth" });
-      });
-    });
-  }
 
   // Testimonial slideshow
   const testimonialContainer = document.getElementById('testimonial-slider');

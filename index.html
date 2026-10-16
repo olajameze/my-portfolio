@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Gomez - Front-End Developer | High-Performance Web Solutions</title>
-    <meta name="description" content="I build fast, accessible, and conversion-optimized web applications that turn visitors into loyal customers and streamline your business operations.">
+    <title>James Gomez | Freelance Front-End Developer | JGDev</title>
+    <meta name="description" content="Front-end development for business websites and web apps, with a focus on speed, accessibility, and clear user experiences.">
     <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32.png">
     <link rel="apple-touch-icon" href="./img/logo.png">
@@ -18,8 +18,8 @@
     </script>
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="James Gomez - Front-End Developer | High-Performance Web Solutions">
-    <meta property="og:description" content="I build fast, accessible, and conversion-optimized web applications that turn visitors into loyal customers and streamline your business operations.">
+    <meta property="og:title" content="James Gomez | Freelance Front-End Developer | JGDev">
+    <meta property="og:description" content="Front-end development for business websites and web apps, with a focus on speed, accessibility, and clear user experiences.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jgdev.co.uk">
     <meta property="og:image" content="https://jgdev.co.uk/img/logo.png">
@@ -70,58 +70,48 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./tailwind-config.js"></script>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v=20261016">
 
 </head>
-<body class="bg-white text-slate-800 font-sans leading-relaxed selection:bg-primary selection:text-white antialiased overflow-x-hidden">
+<body class="site-page bg-white text-slate-800 font-sans leading-relaxed selection:bg-primary selection:text-white antialiased overflow-x-hidden">
 
-    <!-- Top Progress Bar -->
-    <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-blue-600 z-[100] w-0 transition-all duration-500 ease-out pointer-events-none"></div>
-
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/50">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center focus:outline-none rounded" aria-label="James Gomez Home">
+    <header class="site-header fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/50">
+        <div class="site-header__inner max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center focus:outline-none rounded" aria-label="James Gomez Home">
                 <img src="./img/logo.png" alt="JGDev logo" class="h-12 w-auto" decoding="async">
             </a>
 
-            <nav class="hidden md:flex items-center gap-8">
-                <a href="#projects" class="text-sm font-medium text-slate-600 hover:text-primary hover:underline underline-offset-4 transition-colors">Projects</a>
-                <a href="#services" class="text-sm font-medium text-slate-600 hover:text-primary hover:underline underline-offset-4 transition-colors">Services</a>
-                <a href="#about" class="text-sm font-medium text-slate-600 hover:text-primary hover:underline underline-offset-4 transition-colors">About</a>
-                <a href="#pricing" class="text-sm font-medium text-slate-600 hover:text-primary hover:underline underline-offset-4 transition-colors">Pricing</a>
-                <a href="#contact" class="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-medium rounded-full hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300">
+            <nav class="site-nav hidden md:flex items-center gap-8" aria-label="Main navigation">
+                <a href="#projects">Work</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact" class="site-nav__cta">
                     Start Project
                 </a>
             </nav>
 
-            <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-navy focus:outline-none" aria-label="Toggle Menu" aria-controls="mobile-menu" aria-expanded="false">
+            <button id="mobile-menu-btn" class="menu-toggle md:hidden p-2 text-slate-600 hover:text-navy focus:outline-none" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
-            <nav class="flex flex-col px-6 py-4 space-y-4">
-                <a href="#projects" class="text-base font-medium text-slate-600 hover:text-primary hover:underline underline-offset-4">Projects</a>
-                <a href="#services" class="text-base font-medium text-slate-600 hover:text-primary hover:underline underline-offset-4">Services</a>
-                <a href="#about" class="text-base font-medium text-slate-600 hover:text-primary hover:underline underline-offset-4">About</a>
-                <a href="#pricing" class="text-base font-medium text-slate-600 hover:text-primary hover:underline underline-offset-4">Pricing</a>
-                <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full text-center">Start Project</a>
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <nav aria-label="Mobile navigation">
+                <a href="#projects">Work</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact" class="mobile-menu__cta">Start Project</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden scroll-mt-24">
-            <!-- Gradient Background -->
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50/30 to-white -z-10"></div>
-            
-            <!-- Decorative Animated Orbs -->
-            <div class="absolute top-1/4 -left-20 w-48 h-48 md:w-72 md:h-72 bg-primary/10 rounded-full blur-2xl md:blur-3xl -z-10 animate-pulse"></div>
-            <div class="absolute bottom-1/4 -right-20 w-64 h-64 md:w-96 md:h-96 bg-indigo-500/10 rounded-full blur-2xl md:blur-3xl -z-10 animate-pulse orb-delayed"></div>
-
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="max-w-4xl">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full mb-6">
+        <section id="hero" class="hero-section relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden scroll-mt-24">
+            <div class="hero-inner max-w-7xl mx-auto px-6">
+                <div class="hero-copy max-w-4xl">
+                    <div class="availability inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full mb-6">
                         <span class="relative flex h-2 w-2">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
@@ -129,15 +119,15 @@
                         <span class="text-sm font-medium">Available for new projects</span>
                     </div>
 
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
-                        <span class="gradient-text">High-performance web solutions</span> that grow your business.
+                    <h1 class="hero-title text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
+                        <span class="gradient-text">Websites and web apps</span>, made for your business.
                     </h1>
                     <p class="text-xl md:text-2xl text-slate-600 mb-10 leading-relaxed max-w-3xl">
-                        I engineer fast, accessible, and conversion-optimized digital products that turn your visitors into loyal customers and streamline your operational workflows.
+                        I build business websites and web apps, improve site speed, and update outdated interfaces with care for accessibility and how people use them.
                     </p>
                     
-                    <div class="flex flex-wrap items-center gap-4 mb-12">
-                        <a href="#contact" class="group px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-full hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary">
+                    <div class="hero-actions flex flex-wrap items-center gap-4 mb-12">
+                        <a href="#contact" class="group button button--primary button--pill">
                             Start a Project
                             <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
@@ -158,19 +148,26 @@
                             Results-Oriented</div>
                     </div>
                 </div>
+                <a class="hero-preview" href="#projects" aria-label="Explore selected projects, including PestTrace">
+                    <img src="./img/pestt.png" alt="PestTrace platform website preview" fetchpriority="high">
+                    <span class="hero-preview__caption">
+                        <span>PestTrace</span>
+                        <span class="hero-preview__status">In development</span>
+                    </span>
+                </a>
             </div>
         </section>
 
-        <section id="projects" class="py-24 bg-white scroll-mt-24">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="mb-16 max-w-2xl">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">Featured Case Studies</h2>
-                    <p class="text-xl text-slate-600">Deep dives into recent partnerships, highlighting the business challenges faced and the technical solutions delivered.</p>
+        <section id="projects" class="project-section py-24 bg-white scroll-mt-24">
+            <div class="section-wrap max-w-7xl mx-auto px-6">
+                <div class="section-heading mb-16 max-w-2xl">
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">Selected work</h2>
+                    <p class="text-xl text-slate-600">A selection of websites and digital projects, with the needs behind each one and what I built.</p>
                 </div>
 
-                <div class="relative group/carousel">
-                    <div id="project-carousel" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-6 pb-8 scrollbar-hide">
-                        <article class="flex-shrink-0 w-[85vw] md:w-[400px] snap-center group bg-white rounded-2xl border border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full">
+                <div class="project-grid">
+                    <div id="project-list" class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8">
+                        <article class="project-card flex-shrink-0 w-[85vw] md:w-[400px] snap-center group bg-white rounded-2xl border border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full">
                         <div class="relative overflow-hidden">
                             <img 
                                 src="img/weathers'.png" 
@@ -190,7 +187,7 @@
                                 </div>
                                 <div class="h-24 overflow-hidden">
                                     <h4 class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">The Solution</h4>
-                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">Created a professional business website with service pages, contact forms, and SEO optimization to drive customer inquiries.</p>
+                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">Built a business website with service pages, contact forms, and search-engine optimisation to help customers find and contact the business.</p>
                                 </div>
                             </div>
 
@@ -204,7 +201,7 @@
                                 </div>
                                 
                                 <div class="flex items-center gap-3">
-                                    <a href="https://weatherspestsolutions.co.uk/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300">
+                                    <a href="https://weatherspestsolutions.co.uk/" target="_blank" rel="noopener noreferrer" class="project-link">
                                         Visit Website
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </a>
@@ -213,7 +210,7 @@
                         </div>
                     </article>
 
-                        <article class="flex-shrink-0 w-[85vw] md:w-[400px] snap-center group bg-white rounded-2xl border border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full">
+                        <article class="project-card flex-shrink-0 w-[85vw] md:w-[400px] snap-center group bg-white rounded-2xl border border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full">
                         <div class="relative overflow-hidden">
                             <img 
                                 src="img/ojii.png" 
@@ -232,7 +229,7 @@
                                 </div>
                                 <div class="h-24 overflow-hidden">
                                     <h4 class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">The Solution</h4>
-                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">A modern full-stack platform connecting users with cultural services, featuring advanced search, recommendations, and forums.</p>
+                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">A full-stack platform for cultural services, with advanced search, recommendations, and forums.</p>
                                 </div>
                             </div>
                     
@@ -245,7 +242,7 @@
                                 </div>
                                 
                                 <div class="flex items-center gap-3">
-                                    <a href="https://www.ojiiumoja.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300">
+                                    <a href="https://www.ojiiumoja.com/" target="_blank" rel="noopener noreferrer" class="project-link">
                                         Visit Website
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </a>
@@ -255,7 +252,7 @@
                     </article>
 
                     <!-- PestTrace -->
-                        <article class="flex-shrink-0 w-[85vw] md:w-[400px] snap-center group bg-white rounded-2xl border border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full">
+                        <article class="project-card flex-shrink-0 w-[85vw] md:w-[400px] snap-center group bg-white rounded-2xl border border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full">
                         <div class="relative overflow-hidden">
                             <img 
                                 src="img/pestt.png" 
@@ -277,7 +274,7 @@
                                 </div>
                                 <div class="h-24 overflow-hidden">
                                     <h4 class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">The Solution</h4>
-                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">A comprehensive SaaS platform designed to centralize operations, automated scheduling and digital audit trails.</p>
+                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">A SaaS platform that brings pest-control operations together, with automated scheduling and digital audit trails.</p>
                                 </div>
                             </div>
                     
@@ -290,7 +287,7 @@
                                 </div>
                                 
                                 <div class="flex items-center gap-3">
-                                    <a href="https://www.pesttrace.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300">
+                                    <a href="https://www.pesttrace.com/" target="_blank" rel="noopener noreferrer" class="project-link">
                                         View Landing Page
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </a>
@@ -299,7 +296,7 @@
                         </div>
                     </article>
 
-                        <article class="flex-shrink-0 w-[85vw] md:w-[400px] snap-center group bg-white rounded-2xl border border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full">
+                        <article class="project-card flex-shrink-0 w-[85vw] md:w-[400px] snap-center group bg-white rounded-2xl border border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full">
                         <div class="relative overflow-hidden">
                             <img
                                 src="img/breazy.png"
@@ -318,7 +315,7 @@
                                 </div>
                                 <div class="h-24 overflow-hidden">
                                     <h4 class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">The Solution</h4>
-                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">A cinematic marketing site with hero storytelling, featured project cards, services, client testimonials, and a clear book-now flow—structured so visitors scan fast and convert.</p>
+                                    <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">The site features a cinematic homepage, project highlights, services, client testimonials, and a book-now flow, arranged so visitors can find key information quickly.</p>
                                 </div>
                             </div>
 
@@ -331,7 +328,7 @@
                                 </div>
 
                                 <div class="flex items-center gap-3">
-                                    <a href="https://jordans-e-website.vercel.app/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-rose-600 to-orange-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-rose-500/50 transition-all duration-300">
+                                    <a href="https://jordans-e-website.vercel.app/index.html" target="_blank" rel="noopener noreferrer" class="project-link">
                                         Visit Website
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </a>
@@ -341,21 +338,6 @@
                     </article>
                 </div>
 
-                    <!-- Navigation Arrows (Desktop) -->
-                    <button id="carousel-prev" class="hidden lg:flex absolute top-1/2 -left-6 -translate-y-1/2 w-12 h-12 items-center justify-center bg-white border border-slate-200 rounded-full shadow-lg text-slate-600 hover:text-primary transition-all opacity-0 group-hover/carousel:opacity-100 disabled:pointer-events-none disabled:!opacity-0 z-10" aria-label="Previous project">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                    </button>
-                    <button id="carousel-next" class="hidden lg:flex absolute top-1/2 -right-6 -translate-y-1/2 w-12 h-12 items-center justify-center bg-white border border-slate-200 rounded-full shadow-lg text-slate-600 hover:text-primary transition-all opacity-0 group-hover/carousel:opacity-100 disabled:pointer-events-none disabled:!opacity-0 z-10" aria-label="Next project">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-
-                    <!-- Navigation Dots (Mobile) -->
-                    <div id="carousel-dots" class="flex lg:hidden justify-center gap-3 mt-8">
-                        <button class="w-6 h-2.5 rounded-full bg-primary transition-all duration-300" aria-label="Go to project 1"></button>
-                        <button class="w-2.5 h-2.5 rounded-full bg-slate-200 transition-all duration-300" aria-label="Go to project 2"></button>
-                        <button class="w-2.5 h-2.5 rounded-full bg-slate-200 transition-all duration-300" aria-label="Go to project 3"></button>
-                        <button class="w-2.5 h-2.5 rounded-full bg-slate-200 transition-all duration-300" aria-label="Go to project 4"></button>
-                    </div>
                 </div>
             </div>
         </section>
@@ -363,8 +345,8 @@
         <section id="testimonials" class="py-24 bg-slate-50 scroll-mt-24">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="mb-12 text-center max-w-2xl mx-auto">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Client Testimonials</h2>
-                    <p class="text-lg text-slate-600">What clients say about working together.</p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">What clients say</h2>
+                    <p class="text-lg text-slate-600">A few words from people I've worked with.</p>
                 </div>
 
                 <div class="relative">
@@ -375,14 +357,6 @@
                             <p class="mt-4 text-sm font-semibold text-slate-600 text-center flex items-center justify-center gap-3">
                                 <img src="./img/weathers-logo-1x.png" srcset="./img/weathers-logo-1x.png 1x, ./img/weathers-logo-2x.png 2x" alt="Weathers Pest Solutions logo" class="h-8 md:h-10 w-auto flex-shrink-0">
                                 <span>Management Team, Weathers Pest Solutions</span>
-                            </p>
-                        </div>
-
-                        <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none flex flex-col justify-center items-center p-6" data-index="1" aria-hidden="true">
-                            <blockquote class="text-slate-800 text-lg md:text-xl leading-relaxed text-center mx-auto max-w-3xl mb-3">"James brought our brand to life with a stunning website design. He made sure we stood out online, which quickly translated into higher traffic and new client inquiries. His post-launch support and monthly maintenance have been flawless, ensuring our site stays fast, secure, and completely bug-free."</blockquote>
-                            <p class="mt-4 text-sm font-semibold text-slate-600 text-center flex items-center justify-center gap-3">
-                                <img src="./img/breazy-logo-1x.png" srcset="./img/breazy-logo-1x.png 1x, ./img/breazy-logo-2x.png 2x" alt="Breazy Productions logo" class="h-8 md:h-10 w-auto flex-shrink-0">
-                                <span>Founder, Breazy Productions</span>
                             </p>
                         </div>
 
@@ -411,45 +385,41 @@
             </div>
         </section>
 
-        <section id="services" class="py-24 bg-gradient-to-b from-slate-50 to-white scroll-mt-24">
+        <section id="services" class="service-section py-24 bg-gradient-to-b from-slate-50 to-white scroll-mt-24">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="mb-16 text-center max-w-2xl mx-auto">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">How I Can Help</h2>
-                    <p class="text-xl text-slate-600">Focused services designed to solve specific business problems and drive growth through technology.</p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">Web development services</h2>
+                    <p class="text-xl text-slate-600">From a new business website to improvements on an existing one, here's how I can help.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="group relative bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 hover:border-transparent overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
-                        <div class="inline-flex p-3 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 text-white mb-4">
+                        <div class="service-icon">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Business Websites</h3>
-                        <p class="text-slate-600 leading-relaxed">High-converting marketing sites that establish your brand, capture leads, and clearly communicate your value proposition.</p>
+                        <p class="text-slate-600 leading-relaxed">Websites that represent your brand, explain your services, and help potential customers get in touch.</p>
                     </div>
                     <div class="group relative bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 hover:border-transparent overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
-                        <div class="inline-flex p-3 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 text-white mb-4">
+                        <div class="service-icon">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Web Applications</h3>
-                        <p class="text-slate-600 leading-relaxed">Custom, scalable web apps tailored to automate your workflows, serve your customers, and run your core business logic.</p>
+                        <p class="text-slate-600 leading-relaxed">Custom web apps for customer-facing services and the processes your business relies on.</p>
                     </div>
                     <div class="group relative bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 hover:border-transparent overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-amber-500 to-orange-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
-                        <div class="inline-flex p-3 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 text-white mb-4">
+                        <div class="service-icon">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Performance Optimisation</h3>
-                        <p class="text-slate-600 leading-relaxed">Audits and technical refactoring to make your existing site lightning-fast, improving SEO rankings and user retention.</p>
+                        <p class="text-slate-600 leading-relaxed">Performance audits and code improvements to help your existing site load faster and keep visitors engaged.</p>
                     </div>
                     <div class="group relative bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 hover:border-transparent overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
-                        <div class="inline-flex p-3 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 text-white mb-4">
+                        <div class="service-icon">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">UI Fixes & Redesigns</h3>
-                        <p class="text-slate-600 leading-relaxed">Modernizing outdated interfaces and fixing user experience friction points to increase overall conversion rates.</p>
+                        <p class="text-slate-600 leading-relaxed">Updates to outdated interfaces and usability issues, so key actions are easier to complete.</p>
                     </div>
                 </div>
             </div>
@@ -458,38 +428,30 @@
         <section id="about" class="py-24 bg-white scroll-mt-24">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col lg:flex-row items-center gap-16">
-                    <div class="w-full lg:w-5/12">
-                        <div class="relative w-full aspect-square max-w-md mx-auto">
-                            <div class="absolute inset-4 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl opacity-20 translate-x-4 translate-y-4 blur-xl"></div>
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl border-2 border-slate-200 flex items-center justify-center overflow-hidden">
-                                <img src="./img/logo.png" alt="JGDev logo" class="w-64 h-64 object-contain" loading="lazy">
-                            </div>
-                        </div>
+                    <div class="about-brand">
+                        <img src="./img/logo.png" alt="JGDev logo" loading="lazy">
                     </div>
-                    <div class="w-full lg:w-7/12">
+                    <div class="about-copy">
                         <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-6">About Me</h2>
-                        <p class="text-xl text-slate-700 leading-relaxed mb-8">I'm James, a front-end developer who partners with businesses to turn ideas into high-performing digital products. I bridge the gap between technical execution and business strategy.</p>
+                        <p class="text-xl text-slate-700 leading-relaxed mb-8">I'm James, a front-end developer who works with businesses to turn ideas into websites and digital products. I bring design and development together.</p>
                         
                         <div class="space-y-4">
                             <div class="flex gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
-                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold">1</div>
                                 <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">Performance-focused</h4>
-                                    <p class="text-slate-600">Every line of code is written with speed and scalability in mind.</p>
+                                    <h3 class="font-bold text-slate-900 mb-1">Built with care</h3>
+                                    <p class="text-slate-600">I write code with speed and scalability in mind.</p>
                                 </div>
                             </div>
                             <div class="flex gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
-                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold">2</div>
                                 <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">UX-driven</h4>
-                                    <p class="text-slate-600">Interfaces designed for real human interaction and accessibility.</p>
+                                    <h3 class="font-bold text-slate-900 mb-1">Easy to use</h3>
+                                    <p class="text-slate-600">I design interfaces for people, with accessibility in mind.</p>
                                 </div>
                             </div>
                             <div class="flex gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
-                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold">3</div>
                                 <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">Business-oriented</h4>
-                                    <p class="text-slate-600">Solutions built specifically to achieve your company's metrics and goals.</p>
+                                    <h3 class="font-bold text-slate-900 mb-1">Made for your business</h3>
+                                    <p class="text-slate-600">I build solutions around your company's goals.</p>
                                 </div>
                             </div>
                         </div>
@@ -501,11 +463,11 @@
         <section id="pricing" class="py-24 bg-gradient-to-b from-slate-50 to-white scroll-mt-24">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="mb-16 text-center max-w-2xl mx-auto">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">Transparent Pricing</h2>
-                    <p class="text-xl text-slate-600">Clear, straightforward investment tiers. No hidden fees, just value-driven results.</p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">Pricing</h2>
+                    <p class="text-xl text-slate-600">Three service tiers, with the price range and deposit for each.</p>
                 </div>
                 <div class="mb-10 max-w-3xl mx-auto rounded-2xl border-2 border-blue-200 bg-blue-50 px-6 py-5 text-center">
-                    <p class="text-base text-slate-900 font-medium">💳 A deposit is required before we begin any project. The exact amount depends on your chosen tier.</p>
+                    <p class="text-base text-slate-900 font-medium">A deposit is required before work begins. The amount depends on the service tier you choose.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
                     <div class="bg-white rounded-3xl p-8 border-2 border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-xl transition-all duration-300">
@@ -515,9 +477,9 @@
                             <span class="text-2xl text-slate-500">-750</span>
                         </div>
                         <div class="inline-flex items-center rounded-full bg-blue-100 border border-blue-200 px-4 py-2 text-sm font-semibold text-blue-700 mb-6">Deposit: £200</div>
-                        <p class="text-slate-600 mb-6">Perfect for new businesses needing a professional online presence.</p>
+                        <p class="text-slate-600 mb-6">For new businesses that need a professional website.</p>
                     </div>
-                    <div class="relative bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl p-8 shadow-2xl shadow-blue-500/50 scale-105">
+                    <div class="relative rounded-3xl p-8 scale-105">
                         <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-amber-400 text-slate-900 text-xs font-bold uppercase tracking-wider rounded-full">
                             Most Popular
                         </div>
@@ -527,7 +489,7 @@
                             <span class="text-2xl text-blue-100">-1500</span>
                         </div>
                         <div class="inline-flex items-center rounded-full bg-white/20 border border-white/30 px-4 py-2 text-sm font-semibold text-white mb-6">Deposit: £340</div>
-                        <p class="text-blue-50 mb-6">Custom software to digitize processes and serve your users.</p>
+                        <p class="text-blue-50 mb-6">Custom software to move processes online and serve your users.</p>
                     </div>
                     <div class="bg-white rounded-3xl p-8 border-2 border-slate-200 hover:border-blue-300 shadow-lg hover:shadow-xl transition-all duration-300">
                         <h3 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">Advanced Systems</h3>
@@ -535,7 +497,7 @@
                             <span class="text-5xl font-bold text-slate-900">£1500</span>
                         </div>
                         <div class="inline-flex items-center rounded-full bg-slate-100 border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 mb-6">Deposit: £500</div>
-                        <p class="text-slate-600 mb-6">Complex logic, scaling requirements, or enterprise-grade features.</p>
+                        <p class="text-slate-600 mb-6">For complex logic, scaling requirements, or advanced business features.</p>
                     </div>
                 </div>
             </div>
@@ -545,16 +507,16 @@
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <div>
-                        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-6">Let's Build Something.</h2>
+                        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-6">Tell me about your project.</h2>
                         <p class="text-xl text-slate-600 mb-8">
-                            Ready to upgrade your digital presence? Fill out the form, and we'll schedule a quick chat to see if we're a good fit.
+                            Share a few details using the form, and we'll schedule a quick chat to see if we're a good fit.
                         </p>
                         
                         <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-2xl p-6 mb-10">
-                            <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <h3 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
                                 <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                                 Fast Response
-                            </h4>
+                            </h3>
                             <p class="text-slate-600">I usually respond within 24-48 hours.</p>
                         </div>
 
@@ -583,19 +545,19 @@
                             
                             <div>
                                 <label for="name" class="block font-semibold text-slate-900 mb-2">Full Name</label>
-                                <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white focus:border-blue-600 focus:outline-none transition-colors">
+                                <input type="text" id="name" name="name" required placeholder="Your name" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white focus:border-blue-600 focus:outline-none transition-colors">
                             </div>
                             
                             <div>
                                 <label for="email" class="block font-semibold text-slate-900 mb-2">Email Address</label>
-                                <input type="email" id="email" name="email" required placeholder="john@company.com" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white focus:border-blue-600 focus:outline-none transition-colors">
+                                <input type="email" id="email" name="email" required placeholder="you@company.com" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white focus:border-blue-600 focus:outline-none transition-colors">
                             </div>
                             
                             <!-- Dropdown: Service Tier -->
                             <div>
                                 <label for="serviceTier" class="block font-semibold text-slate-900 mb-2">Service Tier</label>
                                 <select id="serviceTier" name="serviceTier" required class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white focus:border-blue-600 focus:outline-none transition-colors">
-                                    <option value="" disabled selected>– Select your package –</option>
+                                    <option value="" disabled selected>Select your package</option>
                                     <option value="Starter Website">Starter Website (£500–750)</option>
                                     <option value="Web App">Web App (£750–1500)</option>
                                     <option value="Advanced Systems">Advanced Systems (£1500+)</option>
@@ -603,14 +565,41 @@
                             </div>
                             
                             <div>
-                                <label for="message" class="block font-semibold text-slate-900 mb-2">Project Details</label>
-                                <textarea id="message" name="message" required rows="4" placeholder="Tell me about your goals, timeline, and budget..." class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white focus:border-blue-600 focus:outline-none transition-colors resize-y"></textarea>
+                                <label for="message" class="block font-semibold text-slate-900 mb-2">What do you need built?</label>
+                                <textarea id="message" name="message" required rows="4" maxlength="5000" placeholder="Tell me what you need, who it's for, and any goals, timeline, or budget..." class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white focus:border-blue-600 focus:outline-none transition-colors resize-y"></textarea>
                             </div>
-                            
+
+                            <div class="form-field">
+                                <label for="businessName" class="block font-semibold text-slate-900 mb-2">Business name <span>(optional)</span></label>
+                                <input type="text" id="businessName" name="businessName" maxlength="160" placeholder="Your business or organisation" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white focus:border-blue-600 focus:outline-none transition-colors">
+                            </div>
+
+                            <div class="form-field">
+                                <label for="businessInfo" class="block font-semibold text-slate-900 mb-2">What does your business do? <span>(optional)</span></label>
+                                <textarea id="businessInfo" name="businessInfo" rows="3" maxlength="2000" placeholder="A short description of your business, services, or customers" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white focus:border-blue-600 focus:outline-none transition-colors resize-y"></textarea>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="currentWebsite" class="block font-semibold text-slate-900 mb-2">Current website <span>(optional)</span></label>
+                                <input type="url" id="currentWebsite" name="currentWebsite" maxlength="500" placeholder="https://example.com" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white focus:border-blue-600 focus:outline-none transition-colors">
+                            </div>
+
+                            <div class="form-field">
+                                <label for="brandColors" class="block font-semibold text-slate-900 mb-2">Colours or visual references <span>(optional)</span></label>
+                                <textarea id="brandColors" name="brandColors" rows="2" maxlength="1000" placeholder="Share colours, links, or examples you'd like me to consider" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white focus:border-blue-600 focus:outline-none transition-colors resize-y"></textarea>
+                            </div>
+
+                            <div class="form-field upload-field">
+                                <label for="referenceImages" class="block font-semibold text-slate-900 mb-2">Images you'd like to use <span>(optional)</span></label>
+                                <p id="image-help" class="field-help">Choose up to 5 JPEG or PNG images (3 MB combined). Images are attached to your project request email and aren't stored separately on this site. To send more, email <a href="mailto:olajameze.jg@googlemail.com">olajameze.jg@googlemail.com</a> after submitting.</p>
+                                <input type="file" id="referenceImages" name="referenceImages" accept="image/jpeg,image/png" multiple aria-describedby="image-help image-selection image-error" class="w-full">
+                                <p id="image-selection" class="upload-status" aria-live="polite">No images selected.</p>
+                                <p id="image-error" class="form-error hidden" role="alert"></p>
+                            </div>
 
                             <!-- Button group: Deposit + Submit side by side -->
                             <div class="flex flex-col sm:flex-row gap-4">
-                                <button type="submit" id="submit-btn" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed">
+                                <button type="submit" id="submit-btn" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 text-white font-semibold disabled:opacity-70 disabled:cursor-not-allowed">
                                     <svg id="submit-spinner" class="hidden animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -619,6 +608,7 @@
                                 </button>
                             </div>
 
+                            <div id="form-error" class="form-error hidden" role="alert"></div>
                             <div id="form-success" class="hidden mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-center gap-3 animate-fade-in">
                                 <div class="flex-shrink-0 w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -635,35 +625,45 @@
         </section>
     </main>
 
-    <footer class="bg-slate-900 text-slate-300 py-16 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="md:col-span-2">
-                    <a href="#" class="inline-block mb-4"><img src="./img/logo.png" alt="JGDev logo" class="h-16 w-auto" decoding="async"></a>
-                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm">Freelance Front-End Developer building high-performance web solutions that drive business growth and user engagement.</p>
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__main">
+                <div class="site-footer__brand">
+                    <a href="#hero" class="site-footer__logo" aria-label="JGDev home">
+                        <img src="./img/logo.png" alt="JGDev, web development and solutions" decoding="async">
+                    </a>
+                    <p>Freelance front-end developer building business websites and web applications.</p>
                 </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#projects" class="hover:text-white transition-colors">Projects</a></li>
-                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+
+                <nav class="site-footer__nav" aria-label="Footer navigation">
+                    <h2>Explore</h2>
+                    <ul>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
                     </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Connect</h4>
-                    <ul class="space-y-3">
-                        <li><a href="mailto:olajameze.jg@googlemail.com" class="hover:text-white transition-colors">Email Me</a></li>
-                    </ul>
+                </nav>
+
+                <div class="site-footer__contact">
+                    <h2>Have a project in mind?</h2>
+                    <p>Tell me what you're looking to build.</p>
+                    <a class="site-footer__email" href="mailto:olajameze.jg@googlemail.com">olajameze.jg@googlemail.com</a>
+                    <a class="site-footer__cta" href="#contact">
+                        <span>Start a project</span>
+                        <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
-            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-slate-500">© 2026 JGDev. All rights reserved.</p>
-                <div class="flex gap-4">
-                    <a href="./terms.html" class="text-sm text-slate-500 hover:text-white transition-colors">Terms & Conditions</a>
-                    <a href="./privacy.html" class="text-sm text-slate-500 hover:text-white transition-colors">Privacy Policy</a>
-                </div>
+
+            <div class="site-footer__bottom">
+                <p>© 2026 JGDev. All rights reserved.</p>
+                <nav aria-label="Legal">
+                    <a href="./terms.html">Terms &amp; Conditions</a>
+                    <a href="./privacy.html">Privacy Policy</a>
+                </nav>
             </div>
         </div>
     </footer>

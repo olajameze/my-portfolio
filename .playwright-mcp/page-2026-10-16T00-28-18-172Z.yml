@@ -1,0 +1,292 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "James Gomez Home" [ref=e4] [cursor=pointer]:
+        - /url: "#hero"
+        - img "JGDev logo" [ref=e5]
+      - navigation "Main navigation" [ref=e6]:
+        - link "Work" [ref=e7] [cursor=pointer]:
+          - /url: "#projects"
+        - link "Services" [ref=e8] [cursor=pointer]:
+          - /url: "#services"
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: "#about"
+        - link "Pricing" [ref=e10] [cursor=pointer]:
+          - /url: "#pricing"
+        - link "Start Project" [ref=e11] [cursor=pointer]:
+          - /url: "#contact"
+  - main [ref=e12]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e16]: Available for new projects
+        - heading "Websites and web apps, made for your business." [level=1] [ref=e20]
+        - paragraph [ref=e21]: I build business websites and web apps, improve site speed, and update outdated interfaces with care for accessibility and how people use them.
+        - generic [ref=e22]:
+          - link "Start a Project" [ref=e23] [cursor=pointer]:
+            - /url: "#contact"
+          - link "View Projects" [ref=e26] [cursor=pointer]:
+            - /url: "#projects"
+      - link "Explore selected projects, including PestTrace" [ref=e27] [cursor=pointer]:
+        - /url: "#projects"
+        - img "PestTrace platform website preview" [ref=e28]
+        - generic [ref=e29]:
+          - generic [ref=e30]: PestTrace
+          - generic [ref=e31]: In development
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - heading "Selected work" [level=2] [ref=e35]
+        - paragraph [ref=e36]: A selection of websites and digital projects, with the needs behind each one and what I built.
+      - generic [ref=e38]:
+        - article [ref=e39]:
+          - img "Weathers Pest Solutions dashboard showing pest control services and pricing" [ref=e41]
+          - generic [ref=e42]:
+            - heading "Weathers Pest Solution" [level=3] [ref=e43]
+            - generic [ref=e44]:
+              - generic [ref=e45]:
+                - heading "The Problem" [level=4] [ref=e46]
+                - paragraph [ref=e47]: Client had no online presence, limiting their ability to attract new customers and establish credibility. They needed a professional website to showcase their services.
+              - generic [ref=e48]:
+                - heading "The Solution" [level=4] [ref=e49]
+                - paragraph [ref=e50]: Built a business website with service pages, contact forms, and search-engine optimisation to help customers find and contact the business.
+            - generic [ref=e51]:
+              - generic [ref=e52]:
+                - generic [ref=e53]: HTML5
+                - generic [ref=e54]: CSS3
+                - generic [ref=e55]: JavaScript
+                - generic [ref=e56]: React
+                - generic [ref=e57]: Next.Js
+              - link "Visit Website" [ref=e59] [cursor=pointer]:
+                - /url: https://weatherspestsolutions.co.uk/
+        - article [ref=e62]:
+          - img "Ojii Umoja platform homepage showcasing Black-owned businesses and community resources" [ref=e64]
+          - generic [ref=e65]:
+            - heading "Ojii Umoja" [level=3] [ref=e66]
+            - generic [ref=e67]:
+              - generic [ref=e68]:
+                - heading "The Problem" [level=4] [ref=e69]
+                - paragraph [ref=e70]: Black communities lack a centralized, culturally relevant platform to discover trusted businesses and services. Existing directories are fragmented.
+              - generic [ref=e71]:
+                - heading "The Solution" [level=4] [ref=e72]
+                - paragraph [ref=e73]: A full-stack platform for cultural services, with advanced search, recommendations, and forums.
+            - generic [ref=e74]:
+              - generic [ref=e75]:
+                - generic [ref=e76]: Next.js
+                - generic [ref=e77]: TypeScript
+                - generic [ref=e78]: React
+                - generic [ref=e79]: Tailwind CSS
+              - link "Visit Website" [ref=e81] [cursor=pointer]:
+                - /url: https://www.ojiiumoja.com/
+        - article [ref=e84]:
+          - generic [ref=e85]:
+            - img "PestTrace SaaS platform for pest control management" [ref=e86]
+            - generic [ref=e87]: In Development
+          - generic [ref=e88]:
+            - heading "PestTrace" [level=3] [ref=e89]
+            - generic [ref=e90]:
+              - generic [ref=e91]:
+                - heading "The Problem" [level=4] [ref=e92]
+                - paragraph [ref=e93]: Pest control businesses struggle with fragmented management systems, making technician tracking and reporting difficult.
+              - generic [ref=e94]:
+                - heading "The Solution" [level=4] [ref=e95]
+                - paragraph [ref=e96]: A SaaS platform that brings pest-control operations together, with automated scheduling and digital audit trails.
+            - generic [ref=e97]:
+              - generic [ref=e98]:
+                - generic [ref=e99]: Next.js
+                - generic [ref=e100]: TypeScript
+                - generic [ref=e101]: Tailwind CSS
+                - generic [ref=e102]: SaaS
+              - link "View Landing Page" [ref=e104] [cursor=pointer]:
+                - /url: https://www.pesttrace.com/
+        - article [ref=e107]:
+          - img "Breazy Productions cinematic videography marketing site with hero video and featured projects" [ref=e109]
+          - generic [ref=e110]:
+            - heading "Breazy Productions" [level=3] [ref=e111]
+            - generic [ref=e112]:
+              - generic [ref=e113]:
+                - heading "The Problem" [level=4] [ref=e114]
+                - paragraph [ref=e115]: "The client needed a premium first impression online: a portfolio that sells weddings, commercial, and documentary work while building trust before the first call."
+              - generic [ref=e116]:
+                - heading "The Solution" [level=4] [ref=e117]
+                - paragraph [ref=e118]: The site features a cinematic homepage, project highlights, services, client testimonials, and a book-now flow, arranged so visitors can find key information quickly.
+            - generic [ref=e119]:
+              - generic [ref=e120]:
+                - generic [ref=e121]: HTML5
+                - generic [ref=e122]: CSS3
+                - generic [ref=e123]: JavaScript
+                - generic [ref=e124]: Tailwind CSS
+              - link "Visit Website" [ref=e126] [cursor=pointer]:
+                - /url: https://jordans-e-website.vercel.app/index.html
+    - generic [ref=e130]:
+      - generic [ref=e131]:
+        - heading "What clients say" [level=2] [ref=e132]
+        - paragraph [ref=e133]: A few words from people I've worked with.
+      - generic [ref=e134]:
+        - region [ref=e135]:
+          - generic "1 of 2" [ref=e136]:
+            - blockquote [ref=e137]: "\"Working with James completely transformed our business operations. He designed a beautiful, highly functional theme that gave us a professional online presence. Not only did our web traffic increase immediately, but his ongoing maintenance keeps everything running smoothly so we can focus on our clients without worrying about tech issues.\""
+            - paragraph [ref=e138]:
+              - img "Weathers Pest Solutions logo" [ref=e139]
+              - generic [ref=e140]: Management Team, Weathers Pest Solutions
+          - generic [aria-hidden]:
+            - blockquote: "\"As a specialized SaaS platform, we needed a front-end developer who understood performance and user experience. James delivered a pristine interface that our users love. His attention to detail and ongoing technical maintenance ensure our systems remain optimal, robust, and highly reliable.\""
+            - paragraph:
+              - generic: Product Team, PestTrace
+        - generic [ref=e141]:
+          - button "Previous testimonial" [ref=e142] [cursor=pointer]
+          - generic [ref=e145]:
+            - button "Go to testimonial 1" [ref=e146] [cursor=pointer]
+            - button "Go to testimonial 2" [ref=e147] [cursor=pointer]
+          - button "Next testimonial" [ref=e148] [cursor=pointer]
+    - generic [ref=e152]:
+      - generic [ref=e153]:
+        - heading "Web development services" [level=2] [ref=e154]
+        - paragraph [ref=e155]: From a new business website to improvements on an existing one, here's how I can help.
+      - generic [ref=e156]:
+        - generic [ref=e157]:
+          - heading "Business Websites" [level=3] [ref=e158]
+          - paragraph [ref=e159]: Websites that represent your brand, explain your services, and help potential customers get in touch.
+        - generic [ref=e160]:
+          - heading "Web Applications" [level=3] [ref=e161]
+          - paragraph [ref=e162]: Custom web apps for customer-facing services and the processes your business relies on.
+        - generic [ref=e163]:
+          - heading "Performance Optimisation" [level=3] [ref=e164]
+          - paragraph [ref=e165]: Performance audits and code improvements to help your existing site load faster and keep visitors engaged.
+        - generic [ref=e166]:
+          - heading "UI Fixes & Redesigns" [level=3] [ref=e167]
+          - paragraph [ref=e168]: Updates to outdated interfaces and usability issues, so key actions are easier to complete.
+    - generic [ref=e171]:
+      - img "JGDev logo" [ref=e173]
+      - generic [ref=e174]:
+        - heading "About Me" [level=2] [ref=e175]
+        - paragraph [ref=e176]: I'm James, a front-end developer who works with businesses to turn ideas into websites and digital products. I bring design and development together.
+        - generic [ref=e177]:
+          - generic [ref=e179]:
+            - heading "Built with care" [level=3] [ref=e180]
+            - paragraph [ref=e181]: I write code with speed and scalability in mind.
+          - generic [ref=e183]:
+            - heading "Easy to use" [level=3] [ref=e184]
+            - paragraph [ref=e185]: I design interfaces for people, with accessibility in mind.
+          - generic [ref=e187]:
+            - heading "Made for your business" [level=3] [ref=e188]
+            - paragraph [ref=e189]: I build solutions around your company's goals.
+    - generic [ref=e191]:
+      - generic [ref=e192]:
+        - heading "Pricing" [level=2] [ref=e193]
+        - paragraph [ref=e194]: Three service tiers, with the price range and deposit for each.
+      - paragraph [ref=e196]: A deposit is required before work begins. The amount depends on the service tier you choose.
+      - generic [ref=e197]:
+        - generic [ref=e198]:
+          - heading "Starter Website" [level=3] [ref=e199]
+          - generic [ref=e200]: £500 -750
+          - generic [ref=e201]: "Deposit: £200"
+          - paragraph [ref=e202]: For new businesses that need a professional website.
+        - generic [ref=e203]:
+          - generic [ref=e204]: Most Popular
+          - heading "Web App" [level=3] [ref=e205]
+          - generic [ref=e206]: £750 -1500
+          - generic [ref=e207]: "Deposit: £340"
+          - paragraph [ref=e208]: Custom software to move processes online and serve your users.
+        - generic [ref=e209]:
+          - heading "Advanced Systems" [level=3] [ref=e210]
+          - generic [ref=e211]: £1500
+          - generic [ref=e212]: "Deposit: £500"
+          - paragraph [ref=e213]: For complex logic, scaling requirements, or advanced business features.
+    - generic [ref=e216]:
+      - generic [ref=e217]:
+        - heading "Tell me about your project." [level=2] [ref=e218]
+        - paragraph [ref=e219]: Share a few details using the form, and we'll schedule a quick chat to see if we're a good fit.
+        - generic [ref=e220]:
+          - heading "Fast Response" [level=3] [ref=e221]
+          - paragraph [ref=e224]: I usually respond within 24-48 hours.
+        - generic [ref=e225]:
+          - generic [ref=e229]:
+            - paragraph [ref=e230]: Email
+            - paragraph [ref=e231]: olajameze.jg@googlemail.com
+          - generic [ref=e236]:
+            - paragraph [ref=e237]: Location
+            - paragraph [ref=e238]: UK (Remote worldwide)
+      - generic [ref=e240]:
+        - generic [ref=e241]: Website (leave blank)
+        - textbox "Website (leave blank)"
+        - generic [ref=e242]:
+          - generic [ref=e243]: Full Name
+          - textbox "Full Name" [ref=e244]:
+            - /placeholder: Your name
+        - generic [ref=e245]:
+          - generic [ref=e246]: Email Address
+          - textbox "Email Address" [ref=e247]:
+            - /placeholder: you@company.com
+        - generic [ref=e248]:
+          - generic [ref=e249]: Service Tier
+          - combobox "Service Tier" [ref=e250]:
+            - option "Select your package" [disabled] [selected]
+            - option "Starter Website (£500–750)"
+            - option "Web App (£750–1500)"
+            - option "Advanced Systems (£1500+)"
+        - generic [ref=e251]:
+          - generic [ref=e252]: What do you need built?
+          - textbox "What do you need built?" [ref=e253]:
+            - /placeholder: Tell me what you need, who it's for, and any goals, timeline, or budget...
+        - generic [ref=e254]:
+          - generic [ref=e255]: Business name (optional)
+          - textbox "Business name (optional)" [ref=e256]:
+            - /placeholder: Your business or organisation
+        - generic [ref=e257]:
+          - generic [ref=e258]: What does your business do? (optional)
+          - textbox "What does your business do? (optional)" [ref=e259]:
+            - /placeholder: A short description of your business, services, or customers
+        - generic [ref=e260]:
+          - generic [ref=e261]: Current website (optional)
+          - textbox "Current website (optional)" [ref=e262]:
+            - /placeholder: https://example.com
+        - generic [ref=e263]:
+          - generic [ref=e264]: Colours or visual references (optional)
+          - textbox "Colours or visual references (optional)" [ref=e265]:
+            - /placeholder: Share colours, links, or examples you'd like me to consider
+        - generic [ref=e266]:
+          - generic [ref=e267]: Images you'd like to use (optional)
+          - paragraph [ref=e268]:
+            - text: Choose up to 5 JPEG or PNG images (3 MB combined). Images are attached to your project request email and aren't stored separately on this site. To send more, email
+            - link "olajameze.jg@googlemail.com" [ref=e269] [cursor=pointer]:
+              - /url: mailto:olajameze.jg@googlemail.com
+            - text: after submitting.
+          - button "Images you'd like to use (optional)" [ref=e270]
+          - paragraph [ref=e271]: No images selected.
+        - button "Send Project Request" [ref=e273] [cursor=pointer]
+  - contentinfo [ref=e275]:
+    - generic [ref=e276]:
+      - generic [ref=e277]:
+        - generic [ref=e278]:
+          - link "JGDev home" [ref=e279] [cursor=pointer]:
+            - /url: "#hero"
+            - img "JGDev, web development and solutions" [ref=e280]
+          - paragraph [ref=e281]: Freelance front-end developer building business websites and web applications.
+        - navigation "Footer navigation" [ref=e282]:
+          - heading "Explore" [level=2] [ref=e283]
+          - list [ref=e284]:
+            - listitem [ref=e285]:
+              - link "Projects" [ref=e286] [cursor=pointer]:
+                - /url: "#projects"
+            - listitem [ref=e287]:
+              - link "Services" [ref=e288] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e289]:
+              - link "About" [ref=e290] [cursor=pointer]:
+                - /url: "#about"
+            - listitem [ref=e291]:
+              - link "Pricing" [ref=e292] [cursor=pointer]:
+                - /url: "#pricing"
+        - generic [ref=e293]:
+          - heading "Have a project in mind?" [level=2] [ref=e294]
+          - paragraph [ref=e295]: Tell me what you're looking to build.
+          - link "olajameze.jg@googlemail.com" [ref=e296] [cursor=pointer]:
+            - /url: mailto:olajameze.jg@googlemail.com
+          - link "Start a project" [ref=e297] [cursor=pointer]:
+            - /url: "#contact"
+      - generic [ref=e301]:
+        - paragraph [ref=e302]: © 2026 JGDev. All rights reserved.
+        - navigation "Legal" [ref=e303]:
+          - link "Terms & Conditions" [ref=e304] [cursor=pointer]:
+            - /url: ./terms.html
+          - link "Privacy Policy" [ref=e305] [cursor=pointer]:
+            - /url: ./privacy.html

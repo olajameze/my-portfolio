@@ -1,0 +1,286 @@
+- generic [ref=f1e2]:
+  - banner [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - link "Adam Greenough" [ref=f1e5] [cursor=pointer]:
+        - /url: /
+        - img "Adam Greenough" [ref=f1e6]
+      - navigation
+      - link "Search" [ref=f1e11] [cursor=pointer]:
+        - /url: /search/
+      - button "Toggle menu" [ref=f1e14] [cursor=pointer]
+  - main [ref=f1e16]:
+    - generic [ref=f1e18]:
+      - generic [ref=f1e19]:
+        - img "Adam Greenough" [ref=f1e20]
+        - generic [ref=f1e21]:
+          - text: Hello! I'm Adam Greenough.
+          - generic [ref=f1e22]: 👋🏻
+      - heading "Freelance web designer, developer & WordPress expert from the UK" [level=1] [ref=f1e23]
+      - paragraph [ref=f1e24]: With over a decade of freelance experience, I thoughtfully design, expertly build and carefully maintain meaningful, results-driven websites that are a pleasure to use.
+      - link "I am available for new freelance projects, let's chat!" [ref=f1e25] [cursor=pointer]:
+        - /url: /contact/
+    - generic [ref=f1e30]:
+      - heading "Services" [level=2] [ref=f1e31]
+      - generic [ref=f1e32]:
+        - link "WordPress WordPress Expert Custom themes, plugins and online stores built to perform, scale and stay easy to manage, with expert ongoing support. Themes Plugins WooCommerce" [ref=f1e33] [cursor=pointer]:
+          - /url: /wordpress-development/
+          - img "WordPress" [ref=f1e36]
+          - generic [ref=f1e38]:
+            - heading "WordPress Expert" [level=3] [ref=f1e39]
+            - paragraph [ref=f1e40]: Custom themes, plugins and online stores built to perform, scale and stay easy to manage, with expert ongoing support.
+            - generic [ref=f1e41]:
+              - generic [ref=f1e42]: Themes
+              - generic [ref=f1e43]: Plugins
+              - generic [ref=f1e44]: WooCommerce
+        - link "Web & UI Design Beautiful, conversion-focused web design crafted thoughtfully around your brand, goals and target audience. Wireframing Prototyping Design Systems" [ref=f1e45] [cursor=pointer]:
+          - /url: /web-design/
+          - generic [ref=f1e50]:
+            - heading "Web & UI Design" [level=3] [ref=f1e51]
+            - paragraph [ref=f1e52]: Beautiful, conversion-focused web design crafted thoughtfully around your brand, goals and target audience.
+            - generic [ref=f1e53]:
+              - generic [ref=f1e54]: Wireframing
+              - generic [ref=f1e55]: Prototyping
+              - generic [ref=f1e56]: Design Systems
+        - link "Bespoke Web Development Modern, responsive and interactive websites hand-crafted on clean, accessible and highly performant foundations. Responsive Accessible Performant" [ref=f1e57] [cursor=pointer]:
+          - /url: /bespoke-web-development/
+          - generic [ref=f1e62]:
+            - heading "Bespoke Web Development" [level=3] [ref=f1e63]
+            - paragraph [ref=f1e64]: Modern, responsive and interactive websites hand-crafted on clean, accessible and highly performant foundations.
+            - generic [ref=f1e65]:
+              - generic [ref=f1e66]: Responsive
+              - generic [ref=f1e67]: Accessible
+              - generic [ref=f1e68]: Performant
+        - link "E-Commerce Conversion-optimised online stores designed to sell, from compelling product pages through to a smooth checkout. WooCommerce Shopify Checkout" [ref=f1e69] [cursor=pointer]:
+          - /url: /ecommerce/
+          - generic [ref=f1e74]:
+            - heading "E-Commerce" [level=3] [ref=f1e75]
+            - paragraph [ref=f1e76]: Conversion-optimised online stores designed to sell, from compelling product pages through to a smooth checkout.
+            - generic [ref=f1e77]:
+              - generic [ref=f1e78]: WooCommerce
+              - generic [ref=f1e79]: Shopify
+              - generic [ref=f1e80]: Checkout
+        - link "SEO & Performance Technical SEO, AEO for AI search, Core Web Vitals optimisation and data-driven content strategies for sustainable organic growth. Technical SEO AEO Core Web Vitals" [ref=f1e81] [cursor=pointer]:
+          - /url: /seo/
+          - generic [ref=f1e86]:
+            - heading "SEO & Performance" [level=3] [ref=f1e87]
+            - paragraph [ref=f1e88]: Technical SEO, AEO for AI search, Core Web Vitals optimisation and data-driven content strategies for sustainable organic growth.
+            - generic [ref=f1e89]:
+              - generic [ref=f1e90]: Technical SEO
+              - generic [ref=f1e91]: AEO
+              - generic [ref=f1e92]: Core Web Vitals
+        - link "Maintenance & Support Proactive updates, security monitoring, automated backups and performance tuning to keep your site healthy. Hosting CI/CD Monitoring" [ref=f1e93] [cursor=pointer]:
+          - /url: /maintenance/
+          - generic [ref=f1e98]:
+            - heading "Maintenance & Support" [level=3] [ref=f1e99]
+            - paragraph [ref=f1e100]: Proactive updates, security monitoring, automated backups and performance tuning to keep your site healthy.
+            - generic [ref=f1e101]:
+              - generic [ref=f1e102]: Hosting
+              - generic [ref=f1e103]: CI/CD
+              - generic [ref=f1e104]: Monitoring
+      - paragraph: Third-party logos and trademarks are the property of their respective owners and are used solely to indicate relevant experience and technologies. No endorsement or affiliation is implied.
+    - generic [ref=f1e106]:
+      - generic [ref=f1e107]:
+        - heading "Selected work" [level=2] [ref=f1e108]
+        - paragraph [ref=f1e109]: A small selection of recent projects I've had the pleasure of working on.
+      - generic [ref=f1e110]:
+        - link "Wessex Resins & Adhesives Wessex Resins & Adhesives Bespoke design & WordPress build for specialist epoxy manufacturer with SEO & support. Web Design WordPress Theme Development" [ref=f1e111] [cursor=pointer]:
+          - /url: /portfolio/wessex-resins-and-adhesives/
+          - img "Wessex Resins & Adhesives" [ref=f1e112]
+          - generic [ref=f1e113]:
+            - generic [ref=f1e114]: Wessex Resins & Adhesives
+            - generic [ref=f1e115]: Bespoke design & WordPress build for specialist epoxy manufacturer with SEO & support.
+            - list:
+              - listitem [ref=f1e116]: Web Design
+              - listitem [ref=f1e117]: WordPress Theme Development
+        - link "Perennial Menswear Perennial Menswear Bespoke WooCommerce theme build for a new menswear brand with advanced filters and coupons. WordPress Theme Development WooCommerce" [ref=f1e118] [cursor=pointer]:
+          - /url: /portfolio/perennial-menswear/
+          - img "Perennial Menswear" [ref=f1e119]
+          - generic [ref=f1e120]:
+            - generic [ref=f1e121]: Perennial Menswear
+            - generic [ref=f1e122]: Bespoke WooCommerce theme build for a new menswear brand with advanced filters and coupons.
+            - list:
+              - listitem [ref=f1e123]: WordPress Theme Development
+              - listitem [ref=f1e124]: WooCommerce
+        - link "Writing the Industrial Revolution Writing the Industrial Revolution WordPress support for an academic project with professors at the University of Leeds & University of Wales. WordPress Support Content Management" [ref=f1e125] [cursor=pointer]:
+          - /url: /portfolio/writing-industry/
+          - img "Writing the Industrial Revolution" [ref=f1e126]
+          - generic [ref=f1e127]:
+            - generic [ref=f1e128]: Writing the Industrial Revolution
+            - generic [ref=f1e129]: WordPress support for an academic project with professors at the University of Leeds & University of Wales.
+            - list:
+              - listitem [ref=f1e130]: WordPress Support
+              - listitem [ref=f1e131]: Content Management
+      - link "View all projects" [ref=f1e133] [cursor=pointer]:
+        - /url: /portfolio/
+    - generic [ref=f1e137]:
+      - paragraph [ref=f1e138]: About Me
+      - heading "A decade of designing & building for the web" [level=2] [ref=f1e139]
+      - paragraph [ref=f1e140]: I'm Adam — a freelance web designer, developer and WordPress expert based in the UK. With 15+ years of freelance experience, I've been helping businesses, startups and agencies bring their ideas to life online.
+      - paragraph [ref=f1e141]: "I care deeply about the craft: clean code, thoughtful design, fast load times and websites that genuinely work for and delight the people using them. Whether it's a brand-new build or rescuing an existing project, I bring the same attention to detail."
+      - link "More about me" [ref=f1e142] [cursor=pointer]:
+        - /url: /about/
+    - generic [ref=f1e144]:
+      - generic [ref=f1e145]:
+        - heading "Who I work with" [level=2] [ref=f1e146]
+        - paragraph [ref=f1e147]: Partnering with ambitious teams to build better digital products.
+      - generic [ref=f1e148]:
+        - link [ref=f1e149] [cursor=pointer]:
+          - /url: /services/
+          - heading "Startups" [level=3] [ref=f1e153]
+          - paragraph [ref=f1e154]:
+            - strong [ref=f1e155]: Zero to Launch.
+            - text: I help founders turn ideas into reality, building MVPs and scalable platforms with a solid technical foundation.
+        - link [ref=f1e156] [cursor=pointer]:
+          - /url: /services/
+          - heading "Small Business & Organisations" [level=3] [ref=f1e160]
+          - paragraph [ref=f1e161]:
+            - strong [ref=f1e162]: Growth & Impact.
+            - text: Professional, high-performing websites without the agency bloat. Cost-effective solutions that drive results.
+        - link [ref=f1e163] [cursor=pointer]:
+          - /url: /contact/
+          - heading "Agencies" [level=3] [ref=f1e167]
+          - paragraph [ref=f1e168]:
+            - strong [ref=f1e169]: Reliable Partner.
+            - text: White-label development and overflow support. I integrate seamlessly with your team to deliver projects on time.
+    - generic [ref=f1e171]:
+      - generic [ref=f1e172]:
+        - heading "Latest from the blog" [level=2] [ref=f1e173]
+        - paragraph [ref=f1e174]: Thoughts on web design, development and the craft of building for the web.
+      - generic [ref=f1e175]:
+        - article [ref=f1e176]:
+          - link [aria-hidden] [ref=f1e177] [cursor=pointer]:
+            - /url: /blog/this-fence-has-no-farmer/
+          - generic [ref=f1e180]:
+            - time [ref=f1e182]: 31st August 2026
+            - heading [level=3] [ref=f1e183]:
+              - link "This Fence Has No Farmer" [ref=f1e184] [cursor=pointer]:
+                - /url: /blog/this-fence-has-no-farmer/
+            - paragraph [ref=f1e185]: Every developer inherits code nobody can explain. The old assumption, that someone had a reason for it, is getting harder to trust. Pondering Chesterton's Fence and AI code.
+            - link "Read more →" [ref=f1e187] [cursor=pointer]:
+              - /url: /blog/this-fence-has-no-farmer/
+        - article [ref=f1e188]:
+          - link [aria-hidden] [ref=f1e189] [cursor=pointer]:
+            - /url: /blog/our-clients-are-using-ai-now/
+          - generic [ref=f1e192]:
+            - time [ref=f1e194]: 25th April 2026
+            - heading [level=3] [ref=f1e195]:
+              - link "Our Clients Are Using AI Now" [ref=f1e196] [cursor=pointer]:
+                - /url: /blog/our-clients-are-using-ai-now/
+            - paragraph [ref=f1e197]: What's actually different now that clients have AI tools and where the human bit still matters the most.
+            - link "Read more →" [ref=f1e199] [cursor=pointer]:
+              - /url: /blog/our-clients-are-using-ai-now/
+        - article [ref=f1e200]:
+          - link [aria-hidden] [ref=f1e201] [cursor=pointer]:
+            - /url: /blog/wordpress-7-the-good-the-ai-the-missing/
+          - generic [ref=f1e204]:
+            - time [ref=f1e206]: 10th April 2026
+            - heading [level=3] [ref=f1e207]:
+              - 'link "WordPress 7.0: The Good, the AI, and the Still Missing" [ref=f1e208] [cursor=pointer]':
+                - /url: /blog/wordpress-7-the-good-the-ai-the-missing/
+            - paragraph [ref=f1e209]: WordPress 7.0 was supposed to ship yesterday. The AI infrastructure is getting all the attention, but the most useful features in the release are the ones nobody's writing about, and some long-overdue ones are still nowhere to be seen.
+            - link "Read more →" [ref=f1e211] [cursor=pointer]:
+              - /url: /blog/wordpress-7-the-good-the-ai-the-missing/
+    - generic [ref=f1e214]:
+      - heading "FAQ" [level=2] [ref=f1e215]
+      - generic [ref=f1e216]:
+        - generic [ref=f1e217]:
+          - group [ref=f1e218]:
+            - generic "Do you charge hourly or fixed project fees? +" [ref=f1e219] [cursor=pointer]
+          - group [ref=f1e220]:
+            - generic "How long does a typical website project take? +" [ref=f1e221] [cursor=pointer]
+          - group [ref=f1e222]:
+            - generic "Can you help with SEO and performance? +" [ref=f1e223] [cursor=pointer]
+          - group [ref=f1e224]:
+            - generic "Do you provide hosting and domain names? +" [ref=f1e225] [cursor=pointer]
+        - generic [ref=f1e226]:
+          - group [ref=f1e227]:
+            - generic "Where are you based, and do you work with clients remotely? +" [ref=f1e228] [cursor=pointer]
+          - group [ref=f1e229]:
+            - generic "Can you redesign or improve my existing website? +" [ref=f1e230] [cursor=pointer]
+          - group [ref=f1e231]:
+            - generic "Will I be able to manage and update the website myself after it's built? +" [ref=f1e232] [cursor=pointer]
+          - group [ref=f1e233]:
+            - generic "Do you offer ongoing maintenance and support after launch? +" [ref=f1e234] [cursor=pointer]
+    - generic [ref=f1e237]:
+      - generic [ref=f1e238]:
+        - heading "Have a project in mind?" [level=2] [ref=f1e239]
+        - paragraph [ref=f1e240]: I'm currently available for new freelance projects. Let's talk.
+      - generic [ref=f1e241]:
+        - link "Get in Touch" [ref=f1e242] [cursor=pointer]:
+          - /url: /contact/
+        - link "View Services" [ref=f1e243] [cursor=pointer]:
+          - /url: /services/
+  - contentinfo [ref=f1e244]:
+    - generic [ref=f1e247]:
+      - generic [ref=f1e248]:
+        - link "Adam Greenough" [ref=f1e249] [cursor=pointer]:
+          - /url: /
+        - paragraph [ref=f1e255]: UK-based freelance web designer, developer & WordPress expert. I design and build thoughtful, results-driven websites for businesses, startups and agencies.
+        - link "Available for freelance projects" [ref=f1e256] [cursor=pointer]:
+          - /url: /contact/
+        - link [ref=f1e260] [cursor=pointer]:
+          - /url: https://withjack.co.uk
+          - img "Insured With Jack" [ref=f1e261]
+      - generic [ref=f1e262]:
+        - paragraph [ref=f1e263]: Explore
+        - list [ref=f1e264]:
+          - listitem [ref=f1e265]:
+            - link "About" [ref=f1e266] [cursor=pointer]:
+              - /url: /about/
+          - listitem [ref=f1e267]:
+            - link "Services" [ref=f1e268] [cursor=pointer]:
+              - /url: /services/
+          - listitem [ref=f1e269]:
+            - link "Portfolio" [ref=f1e270] [cursor=pointer]:
+              - /url: /portfolio/
+          - listitem [ref=f1e271]:
+            - link "Blog" [ref=f1e272] [cursor=pointer]:
+              - /url: /blog/
+          - listitem [ref=f1e273]:
+            - link "Knowledgebase" [ref=f1e274] [cursor=pointer]:
+              - /url: /kb/
+          - listitem [ref=f1e275]:
+            - link "Contact" [ref=f1e276] [cursor=pointer]:
+              - /url: /contact/
+      - generic [ref=f1e277]:
+        - paragraph [ref=f1e278]: Services
+        - list [ref=f1e279]:
+          - listitem [ref=f1e280]:
+            - link "Web Design" [ref=f1e281] [cursor=pointer]:
+              - /url: /web-design/
+          - listitem [ref=f1e282]:
+            - link "Local Web Design" [ref=f1e283] [cursor=pointer]:
+              - /url: /hampshire-web-design/
+          - listitem [ref=f1e284]:
+            - link "WordPress Development" [ref=f1e285] [cursor=pointer]:
+              - /url: /wordpress-development/
+          - listitem [ref=f1e286]:
+            - link "Bespoke Development" [ref=f1e287] [cursor=pointer]:
+              - /url: /bespoke-web-development/
+          - listitem [ref=f1e288]:
+            - link "E-Commerce" [ref=f1e289] [cursor=pointer]:
+              - /url: /ecommerce/
+          - listitem [ref=f1e290]:
+            - link "SEO & Performance" [ref=f1e291] [cursor=pointer]:
+              - /url: /seo/
+          - listitem [ref=f1e292]:
+            - link "Maintenance" [ref=f1e293] [cursor=pointer]:
+              - /url: /maintenance/
+          - listitem [ref=f1e294]:
+            - link "Emergency Support" [ref=f1e295] [cursor=pointer]:
+              - /url: /emergency-wordpress-support/
+    - generic [ref=f1e297]:
+      - generic [ref=f1e298]:
+        - generic [ref=f1e299]: © 2011–2026 Adam Greenough. All rights reserved. Protected by Copyscape.
+        - generic [ref=f1e300]:
+          - link "Privacy" [ref=f1e301] [cursor=pointer]:
+            - /url: /privacy/
+          - link "Terms" [ref=f1e302] [cursor=pointer]:
+            - /url: /terms/
+      - generic [ref=f1e303]:
+        - link "RSS Feed" [ref=f1e304] [cursor=pointer]:
+          - /url: /feed/post.xml
+        - link "LinkedIn" [ref=f1e307] [cursor=pointer]:
+          - /url: https://linkedin.com/in/adamgreenough
+        - link "Bluesky" [ref=f1e310] [cursor=pointer]:
+          - /url: https://bsky.app/profile/adamgreenough.net
